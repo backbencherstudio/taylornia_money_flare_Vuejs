@@ -5,6 +5,14 @@ import GoogleIcon from "../Icons/GoogleIcon.vue";
 
 const socialButtonClasses =
   "flex justify-center items-center bg-[#2BFFC30F] w-[50px] h-[50px] border border-white/10 rounded-full hover:bg-[#2BFFC320] transition-all duration-200";
+
+const email = ref("");
+const password = ref("");
+
+const handleLogin = () => {
+  const data = [{ email: email.value, password: password.value }];
+  console.log(data)
+};
 </script>
 
 <template>
@@ -28,11 +36,12 @@ const socialButtonClasses =
           <p>Enter Your Details to Signin</p>
         </div>
 
-        <form action="" class="space-y-4">
+        <form @submit.prevent="handleLogin" action="" class="space-y-4">
           <div class="">
             <label for="" class="block text-xl lg:text-2xl mb-3.5">Email</label>
             <input
               type="email"
+              v-model="email"
               placeholder="Enter Your Email"
               class="w-full p-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3]"
             />
@@ -43,6 +52,7 @@ const socialButtonClasses =
             >
             <input
               type="password"
+              v-model= "password"
               placeholder="Enter Your Email"
               class="w-full p-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3]"
             />
@@ -103,24 +113,19 @@ const socialButtonClasses =
           <hr class="border border-white/20 w-1/3" />
         </div>
         <div class="flex w-58 mx-auto justify-center items-center gap-10 mt-5">
-          <button
-            :class="socialButtonClasses"
-          >
+          <button :class="socialButtonClasses">
             <GoogleIcon class="text-primary" />
           </button>
-          <button
-            :class="socialButtonClasses"
-          >
+          <button :class="socialButtonClasses">
             <FacebookIcon class="text-primary" />
           </button>
-          <button
-            :class="socialButtonClasses"
-          >
+          <button :class="socialButtonClasses">
             <AppleIcon class="text-primary" />
           </button>
         </div>
         <div class="mt-5 xl:mt-10 text-center">
-          Don’t have an account? <NuxtLink to="/auth/signup" class="text-primary">Sign Up</NuxtLink>
+          Don’t have an account?
+          <NuxtLink to="/auth/signup" class="text-primary">Sign Up</NuxtLink>
         </div>
       </div>
     </div>
