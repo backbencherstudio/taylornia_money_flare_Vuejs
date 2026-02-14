@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppleIcon from "../Icons/AppleIcon.vue";
+import FacebookIcon from "../Icons/FacebookIcon.vue";
+import GoogleIcon from "../Icons/GoogleIcon.vue";
+
+const socialButtonClasses =
+  "flex justify-center items-center bg-[#2BFFC30F] w-[50px] h-[50px] border border-white/10 rounded-full hover:bg-[#2BFFC320] transition-all duration-200";
+</script>
 
 <template>
   <div class="relative overflow-hidden">
@@ -15,7 +22,7 @@
       </div>
 
       <!-- Content section -->
-      <div class="relative z-20 lg:w-126.5 lg:pr-4 xl:pr-0">
+      <div class="relative z-20 xl:w-126.5 lg:pr-4 xl:pr-0">
         <div class="mb-10 lg:mb-10 text-center lg:text-left">
           <h1 class="text-[2rem] lg:text-[2.5rem]">Welcome Back!</h1>
           <p>Enter Your Details to Signin</p>
@@ -31,7 +38,9 @@
             />
           </div>
           <div class="mb-6">
-            <label for="" class="block text-xl lg:text-2xl mb-3.5">Password</label>
+            <label for="" class="block text-xl lg:text-2xl mb-3.5"
+              >Password</label
+            >
             <input
               type="password"
               placeholder="Enter Your Email"
@@ -72,7 +81,9 @@
                   </div>
                 </div>
               </label>
-              <p class="text-sm lg:text-lg w-[10ch] sm:w-full">Remember me for 30 days</p>
+              <p class="text-sm lg:text-lg w-[10ch] sm:w-full">
+                Remember me for 30 days
+              </p>
             </div>
             <NuxtLink to="/" class="text-primary text-sm lg:text-lg"
               >Forgot Password</NuxtLink
@@ -88,8 +99,28 @@
         </form>
         <div class="flex items-center gap-3 mt-10">
           <hr class="border border-white/20 w-1/3" />
-          <p class="w-1/3 lg:text-lg text-center text-xs">Or continue with</p>
+          <p class="w-1/3 xl:text-lg text-center text-xs">Or continue with</p>
           <hr class="border border-white/20 w-1/3" />
+        </div>
+        <div class="flex w-58 mx-auto justify-center items-center gap-10 mt-5">
+          <button
+            :class="socialButtonClasses"
+          >
+            <GoogleIcon class="text-primary" />
+          </button>
+          <button
+            :class="socialButtonClasses"
+          >
+            <FacebookIcon class="text-primary" />
+          </button>
+          <button
+            :class="socialButtonClasses"
+          >
+            <AppleIcon class="text-primary" />
+          </button>
+        </div>
+        <div class="mt-5 xl:mt-10 text-center">
+          Don’t have an account? <NuxtLink to="/auth/signup" class="text-primary">Sign Up</NuxtLink>
         </div>
       </div>
     </div>
@@ -155,7 +186,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
-  border: 2px solid var(--primary-dark);
+  border: 1px solid var(--primary-dark);
   transition: all 0.4s ease;
 }
 
