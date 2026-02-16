@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <button
     :type="type"
-    class="w-full btn-bg border border-primary leading-[150%] font-medium text-sm rounded-full px-6.75 py-4.5 transition-all duration-200 hover:opacity-90"
+    class="w-full btn-bg border border-[#2BFFC3] leading-[150%] font-medium text-sm rounded-full px-6.75 py-4.5 transition-all duration-200 hover:opacity-90"
   >
     <span class="text-black">
       {{ name }}
