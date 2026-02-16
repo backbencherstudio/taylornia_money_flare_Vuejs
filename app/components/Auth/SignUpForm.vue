@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import EmailIcon from "../Icons/EmailIcon.vue";
+import EyeCloseIcon from "../Icons/EyeCloseIcon.vue";
+import EyeIcon from "../Icons/EyeIcon.vue";
 import LockIcon from "../Icons/LockIcon.vue";
 import PhoneIcon from "../Icons/PhoneIcon.vue";
 import SingleUserIcon from "../Icons/SingleUserIcon.vue";
 import BaseButton from "../Reusable/BaseButton.vue";
 
 const handleSignUp = () => {};
+const showPassword = ref(false);
+const showConfirmPassword = ref(false);
 </script>
 
 <template>
   <div>
     <!-- Image section -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 xl:gap-20 p-6">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 xl:gap-20 p-6"
+    >
       <div class="image-wrapper">
         <img
           src="/images/signup.png"
@@ -93,13 +99,22 @@ const handleSignUp = () => {};
               >
               <div class="relative">
                 <input
-                  type="Password"
+                  :type="showPassword ? 'text' : 'password'"
                   placeholder="Enter Your Password"
-                  class="w-full px-8 py-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3] placeholder:text-sm"
+                  class="w-full px-8 pr-16 py-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3] placeholder:text-sm"
                 />
                 <span class="absolute left-3 top-1/2 transform -translate-y-1/2"
                   ><LockIcon
                 /></span>
+                <button
+                  type="button"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/90 hover:text-primary transition-colors"
+                  @click="showPassword = !showPassword"
+                  :aria-label="showPassword ? 'Hide password' : 'Show password'"
+                >
+                  <EyeCloseIcon v-if="showPassword" />
+                  <EyeIcon v-else />
+                </button>
               </div>
             </div>
             <div>
@@ -108,12 +123,24 @@ const handleSignUp = () => {};
               >
               <div class="relative">
                 <input
-                  type="password"
+                  :type="showConfirmPassword ? 'text' : 'password'"
                   placeholder="Confirm Your Password"
-                  class="w-full px-8 py-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3] placeholder:text-sm"
+                  class="w-full px-8 pr-16 py-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3] placeholder:text-sm"
                 />
                 <span class="absolute left-3 top-1/2 transform -translate-y-1/2"
-                  ><LockIcon /></span>
+                  ><LockIcon
+                /></span>
+                <button
+                  type="button"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/90 hover:text-primary transition-colors"
+                  @click="showConfirmPassword = !showConfirmPassword"
+                  :aria-label="
+                    showConfirmPassword ? 'Hide password' : 'Show password'
+                  "
+                >
+                  <EyeIcon v-if="showConfirmPassword" />
+                  <EyeCloseIcon v-else />
+                </button>
               </div>
             </div>
           </div>

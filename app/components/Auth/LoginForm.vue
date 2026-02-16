@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import AppleIcon from "../Icons/AppleIcon.vue";
+import EyeCloseIcon from "../Icons/EyeCloseIcon.vue";
+import EyeIcon from "../Icons/EyeIcon.vue";
 import FacebookIcon from "../Icons/FacebookIcon.vue";
 import GoogleIcon from "../Icons/GoogleIcon.vue";
 
@@ -8,6 +10,7 @@ const socialButtonClasses =
 
 const email = ref("");
 const password = ref("");
+const showPassword = ref(false);
 
 const handleLogin = () => {
   const data = [{ email: email.value, password: password.value }];
@@ -50,12 +53,23 @@ const handleLogin = () => {
             <label for="" class="block text-xl lg:text-2xl mb-3.5"
               >Password</label
             >
-            <input
-              type="password"
-              v-model= "password"
-              placeholder="Enter Your Email"
-              class="w-full p-4 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3]"
-            />
+            <div class="relative">
+              <input
+                :type="showPassword ? 'text' : 'password'"
+                v-model="password"
+                placeholder="Enter Your Password"
+                class="w-full p-4 pr-16 rounded-xl bg-[#08080880] border border-[#808080] focus:text-[#2BFFC3] focus:outline-none focus:border focus:border-[#2BFFC3] focus:placeholder:text-[#2BFFC3]"
+              />
+              <button
+                type="button"
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/90 hover:text-primary transition-colors"
+                @click="showPassword = !showPassword"
+                :aria-label="showPassword ? 'Hide password' : 'Show password'"
+              >
+                <EyeCloseIcon v-if="showPassword" />
+                <EyeIcon v-else />
+              </button>
+            </div>
           </div>
 
           <div class="flex justify-between items-center mb-10">
