@@ -12,41 +12,71 @@ const marqueeImages = [
 </script>
 
 <template>
-  <section class="hero-section pt-9 xl:pt-22 flex justify-center items-center px-6 xl:px-0 relative overflow-hidden">
-    <div>
-      <div class="xl:w-193 py-25">
-        <h1
-          class="text-5xl xl:text-[4rem] text-center text-[#FFFFFF99] font-medium leading-[109%] tracking-[-1.28px] mb-5 xl:mb-7.5"
-        >
-          AI‑Driven Crypto Trading. Truly Automated. Truly Smart.
-        </h1>
-        <p class="text-base xl:text-lg text-[#CCC] leading-[140%] text-center">
-          MoneyFlare uses advanced AI and professional quantitative systems to
-          automate your crypto trading — no expertise needed.
-        </p>
-      </div>
-      <div class="flex justify-center mt-7.5 xl:mt-10">
-        <BaseLinkButton to="/auth/signup" variant="primary">Get Started</BaseLinkButton>
-      </div>
-      <div class="mt-15 xl:mt-20">
-        <p class="text-sm text-[#ccc] leading-[160%] text-center mb-4">
-          Support top 30+ chains
-        </p>
-        <div class="xl:w-193 mx-auto flex justify-between relative overflow-hidden">
+  <section class="hero-section pt-9 xl:pt-22 overflow-hidden relative">
+    <div
+      class="flex flex-col lg:flex-row justify-center items-center px-6 xl:px-0 relative"
+    >
+      <div class="relative z-20">
+        <div class="lg:w-150 xl:w-193 py-25">
+          <h1
+            class="text-5xl xl:text-[4rem] text-center text-[#FFFFFF99] font-medium leading-[109%] tracking-[-1.28px] mb-5 xl:mb-7.5"
+          >
+            AI‑Driven Crypto Trading. Truly Automated. Truly Smart.
+          </h1>
+          <p
+            class="text-base xl:text-lg text-[#CCC] leading-[140%] text-center"
+          >
+            MoneyFlare uses advanced AI and professional quantitative systems to
+            automate your crypto trading — no expertise needed.
+          </p>
+        </div>
+        <div class="flex justify-center mt-7.5 xl:mt-10">
+          <BaseLinkButton to="/auth/signup" variant="primary"
+            >Get Started</BaseLinkButton
+          >
+        </div>
+        <div class="mt-15 xl:mt-20">
+          <p class="text-sm text-[#ccc] leading-[160%] text-center mb-4">
+            Support top 30+ chains
+          </p>
+          <div
+            class="xl:w-193 mx-auto flex justify-between relative overflow-hidden"
+          >
             <!-- Deco -->
-            <img src="/images/landing/cosmos.png" alt="" class="h-8">
-            <img src="/images/landing/cosmos.png" alt="" class="h-8">
-            <img src="/images/landing/cosmos.png" alt="" class="h-8">
-            <img src="/images/landing/cosmos.png" alt="" class="h-8">
-            <img src="/images/landing/cosmos.png" alt="" class="h-8">
+            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
+            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
+            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
+            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
+            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
             <!-- decoration -->
-             <div class="absolute h-8 w-40 bg-linear-to-l to-[#030a08] from-transparent"/>
-             <div class="absolute right-0 h-8 w-40 bg-linear-to-l from-[#030a08] to-transparent"/>
+            <div
+              class="absolute h-8 w-40 bg-linear-to-l to-[#030a08] from-transparent"
+            />
+            <div
+              class="absolute right-0 h-8 w-40 bg-linear-to-l from-[#030a08] to-transparent"
+            />
+          </div>
         </div>
       </div>
     </div>
     <!-- decoration -->
-     <div class="absolute -top-32 -left-32 lg:-top-100 lg:-left-100 blur-[125px] opacity-[0.4] w-54.75 h-54.75 lg:w-160.75 lg:h-160.75 bg-primary rounded-full"/>
+    <div
+      class="absolute -top-32 -left-32 lg:-top-100 lg:-left-100 blur-[125px] opacity-[0.4] w-54.75 h-54.75 lg:w-160.75 lg:h-160.75 bg-primary rounded-full"
+    />
+    <div>
+      <img
+        src="/images/landing/robot-pc.png"
+        alt=""
+        class="hidden lg:block lg:absolute bottom-0 right-0 lg:h-120 xl:h-150"
+      />
+      <div class="flex justify-end mt-12.5 bg-[#030303]">
+        <img
+          src="/images/landing/robot-mobile.png"
+          alt=""
+          class="block lg:hidden h-102.75 right-0"
+        />
+      </div>
+    </div>
   </section>
 </template>
 
