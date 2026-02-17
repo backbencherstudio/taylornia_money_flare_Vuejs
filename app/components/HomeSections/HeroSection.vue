@@ -7,6 +7,12 @@ const marqueeImages = [
   "/images/landing/marquee4.png",
   "/images/landing/stacks.png",
   "/images/landing/polygon.png",
+  "/images/landing/cosmos.png",
+  "/images/landing/elrond.png",
+  "/images/landing/ethereum.png",
+  "/images/landing/marquee4.png",
+  "/images/landing/stacks.png",
+  "/images/landing/polygon.png",
   ,
 ];
 </script>
