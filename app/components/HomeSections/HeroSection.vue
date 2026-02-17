@@ -12,12 +12,12 @@ const marqueeImages = [
 </script>
 
 <template>
-  <section class="hero-section pt-9 xl:pt-22 overflow-hidden relative">
+  <section class="hero-section pt-9 xl:pt-22 overflow-hidden relative pb-9 xb:pb-25">
     <div
-      class="flex flex-col lg:flex-row justify-center items-center px-6 xl:px-0 relative"
+      class="flex flex-col lg:flex-row justify-center items-center px-6 xl:px-4 relative"
     >
-      <div class="relative z-20">
-        <div class="lg:w-150 xl:w-193 py-25">
+      <div class="relative z-20 pt-15 xl:pt-25">
+        <div class="lg:w-150 xl:w-193 ">
           <h1
             class="text-5xl xl:text-[4rem] text-center text-[#FFFFFF99] font-medium leading-[109%] tracking-[-1.28px] mb-5 xl:mb-7.5"
           >
@@ -30,7 +30,7 @@ const marqueeImages = [
             automate your crypto trading — no expertise needed.
           </p>
         </div>
-        <div class="flex justify-center mt-7.5 xl:mt-10">
+        <div class="flex justify-center mt-7.5 xl:mt-10 ">
           <BaseLinkButton to="/auth/signup" variant="primary"
             >Get Started</BaseLinkButton
           >
