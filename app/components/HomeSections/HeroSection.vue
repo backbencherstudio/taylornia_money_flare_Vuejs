@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseLinkButton from "../Reusable/baseLinkButton.vue";
+import BaseLinkButton from "../Reusable/BaseButtonLink.vue";
 const marqueeImages = [
   "/images/landing/cosmos.png",
   "/images/landing/elrond.png",
@@ -12,7 +12,7 @@ const marqueeImages = [
 </script>
 
 <template>
-  <section class="hero-section pt-9 xl:pt-22 flex justify-center items-center px-6 xl:px-0">
+  <section class="hero-section pt-9 xl:pt-22 flex justify-center items-center px-6 xl:px-0 relative overflow-hidden">
     <div>
       <div class="xl:w-193 py-25">
         <h1
@@ -26,7 +26,7 @@ const marqueeImages = [
         </p>
       </div>
       <div class="flex justify-center mt-7.5 xl:mt-10">
-        <BaseLinkButton> Get Started </BaseLinkButton>
+        <BaseLinkButton to="/auth/signup" variant="primary">Get Started</BaseLinkButton>
       </div>
       <div class="mt-15 xl:mt-20">
         <p class="text-sm text-[#ccc] leading-[160%] text-center mb-4">
@@ -45,6 +45,8 @@ const marqueeImages = [
         </div>
       </div>
     </div>
+    <!-- decoration -->
+     <div class="absolute -top-32 -left-32 lg:-top-100 lg:-left-100 blur-[125px] opacity-[0.4] w-54.75 h-54.75 lg:w-160.75 lg:h-160.75 bg-primary rounded-full"/>
   </section>
 </template>
 
