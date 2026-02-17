@@ -39,25 +39,33 @@ const marqueeImages = [
           <p class="text-sm text-[#ccc] leading-[160%] text-center mb-4">
             Support top 30+ chains
           </p>
-          <div
-            class="xl:w-193 mx-auto flex justify-between relative overflow-hidden"
-          >
-            <!-- Deco -->
-            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
-            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
-            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
-            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
-            <img src="/images/landing/cosmos.png" alt="" class="h-8" />
-            <!-- decoration -->
-            <div
-              class="absolute h-8 w-40 bg-linear-to-l to-[#030a08] from-transparent"
-            />
-            <div
-              class="absolute right-0 h-8 w-40 bg-linear-to-l from-[#030a08] to-transparent"
-            />
-          </div>
         </div>
       </div>
+    </div>
+    <!-- marquee -->
+    <div class="marquee-wrapper xl:w-193 mx-auto relative overflow-hidden">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <img
+            v-for="(image, index) in marqueeImages"
+            :key="`logo-a-${index}`"
+            :src="image"
+            alt=""
+            class="marquee-logo"
+          />
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <img
+            v-for="(image, index) in marqueeImages"
+            :key="`logo-b-${index}`"
+            :src="image"
+            alt=""
+            class="marquee-logo"
+          />
+        </div>
+      </div>
+      <div class="marquee-fade marquee-fade-left" />
+      <div class="marquee-fade marquee-fade-right" />
     </div>
     <!-- decoration -->
     <div
@@ -91,5 +99,63 @@ const marqueeImages = [
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: normal, color, normal;
+}
+
+.marquee-wrapper {
+  width: min(100%, 48.25rem);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-right: clamp(2rem, 4vw, 4rem);
+}
+
+.marquee-logo {
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.marquee-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #030303 0%, transparent 100%);
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #030303 0%, transparent 100%);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }
 </style>
