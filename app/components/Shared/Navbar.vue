@@ -74,51 +74,53 @@ const languageOptions = [
       </div>
     </div>
 
-    <div
-      class="lg:hidden fixed inset-0 z-40"
-      :class="isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'"
-    >
+    <Teleport to="body">
       <div
-        class="absolute inset-0 bg-black/60 transition-opacity duration-300"
-        :class="isMenuOpen ? 'opacity-100' : 'opacity-0'"
-        @click="isMenuOpen = false"
-      />
-      <aside
-        class="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-[#050505] border-l border-white/10 p-6 flex flex-col gap-6 transition-transform duration-300 ease-out"
-        :class="isMenuOpen ? 'translate-x-0' : 'translate-x-full'"
+        class="lg:hidden fixed inset-0 z-999"
+        :class="isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'"
       >
-        <div class="flex items-center justify-between">
-          <span class="text-white text-lg font-semibold">Menu</span>
-          <button
-            type="button"
-            class="text-white/70 hover:text-white transition-colors"
-            @click="isMenuOpen = false"
-          >
-            Close
-          </button>
-        </div>
-
-        <nav class="flex flex-col gap-4 text-white/80">
-          <NuxtLink
-            v-for="link in navLinks"
-            :key="link.label"
-            :to="link.to"
-            class="hover:text-primary transition-colors"
-            @click="isMenuOpen = false"
-          >
-            {{ link.label }}
-          </NuxtLink>
-        </nav>
-
-        <NuxtLink
-          to="/auth/signup"
-          class="btn-bg border border-primary text-black font-medium text-sm rounded-full px-6 py-3 text-center"
+        <div
+          class="absolute inset-0 bg-black/60 transition-opacity duration-300"
+          :class="isMenuOpen ? 'opacity-100' : 'opacity-0'"
           @click="isMenuOpen = false"
+        />
+        <aside
+          class="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-[#050505] border-l border-white/10 p-6 flex flex-col gap-6 transition-transform duration-300 ease-out"
+          :class="isMenuOpen ? 'translate-x-0' : 'translate-x-full'"
         >
-          Get Started
-        </NuxtLink>
-      </aside>
-    </div>
+          <div class="flex items-center justify-between">
+            <span class="text-white text-lg font-semibold">Menu</span>
+            <button
+              type="button"
+              class="text-white/70 hover:text-white transition-colors"
+              @click="isMenuOpen = false"
+            >
+              Close
+            </button>
+          </div>
+
+          <nav class="flex flex-col gap-4 text-white/80">
+            <NuxtLink
+              v-for="link in navLinks"
+              :key="link.label"
+              :to="link.to"
+              class="hover:text-primary transition-colors"
+              @click="isMenuOpen = false"
+            >
+              {{ link.label }}
+            </NuxtLink>
+          </nav>
+
+          <NuxtLink
+            to="/auth/signup"
+            class="btn-bg border border-primary text-black font-medium text-sm rounded-full px-6 py-3 text-center"
+            @click="isMenuOpen = false"
+          >
+            Get Started
+          </NuxtLink>
+        </aside>
+      </div>
+    </Teleport>
   </nav>
 </template>
 
