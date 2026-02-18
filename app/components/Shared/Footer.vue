@@ -12,7 +12,7 @@ import Youtube from "../Icons/Youtube.vue";
     >
       <div class="bg-[#030303]">
         <div class="max-w-312 mx-auto px-6">
-          <div class="flex flex-col lg:flex-row gap-12.5 justify-between py-20">
+          <div class="flex flex-col lg:flex-row gap-12.5 justify-between pb-15 pt-20 lg:py-20">
             <div class="sm:w-95.5">
               <NuxtLink
                 to="/"
