@@ -43,7 +43,7 @@ const features = [
 </script>
 
 <template>
-    <section class="max-w-7xl mx-auto px-6 pt-10 xl:pt-20">
+    <section class="max-w-7xl mx-auto px-6 xl:px-10 pt-10 xl:pt-20">
         <div>
             <SectionHeading title="Powerful features built for crypto confidence"
                 description="Streamline your experience with intelligent tools designed to keep you secure, informed, and in control — every step of the way."
