@@ -9,7 +9,7 @@ import Youtube from "../Icons/Youtube.vue";
   <div>
     <footer class="bg-linear-to-l to-transparent via-white/30 from-transparent py-px">
       <div class="bg-[#030303]">
-        <div class="max-w-7xl mx-auto px-6 xl:px-10 xl:px-10">
+        <div class="max-w-7xl mx-auto px-6 xl:px-10">
           <div class="flex flex-col lg:flex-row gap-12.5 justify-between pb-15 pt-20 lg:py-20">
             <div class="sm:w-95.5">
               <NuxtLink to="/" class="text-white text-2xl lg:text-[2.5rem] font-semibold mb-5">
@@ -82,7 +82,7 @@ import Youtube from "../Icons/Youtube.vue";
         </div>
       </div>
     </footer>
-    <div class="flex justify-between text-sm text-[#c0c0c0] py-6 max-w-312 px-6 mx-auto">
+    <div class="flex flex-col-reverse items-center gap-3.5 md:flex-row md:justify-between text-sm text-[#c0c0c0] py-6 max-w-312 px-6 mx-auto">
       <p>© Money Flare. All rights reserved.</p>
       <div class="flex items-center gap-5">
         <NuxtLink to="/terms">Terms of Service</NuxtLink>

@@ -62,8 +62,8 @@ const faqs = [
                         {{ faq.question }}
                     </h3>
 
-                    <div class="transition-transform duration-300" :class="{ '': activeIndex === index }">
-                        <CloseIcon v-if="activeIndex === index" class="text-red-500" />
+                    <div class="transition-transform duration-300" :class="{ 'rotate-180': activeIndex === index }">
+                        <CircleIcon v-if="activeIndex === index" class="" />
                         <CircleIcon v-else class="text-primary" />
                     </div>
                 </button>
