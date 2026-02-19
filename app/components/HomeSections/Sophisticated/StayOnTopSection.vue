@@ -18,8 +18,8 @@ import SectionHeading from "~/components/Reusable/SectionHeading.vue";
           <BaseButtonLink>Get Started</BaseButtonLink>
         </div>
       </div>
-      <div class="relative lg:pr-6 xl:pr-0">
-        <div class="absolute lg:hidden inset-0 bg-linear-to-l to-[#030303] via-transparent from-[#030303]  "/>
+      <div class="relative lg:pr-6">
+        <div class="absolute lg:hidden inset-0 bg-linear-to-l to-[#030303] via-transparent from-[#030303]"/>
         <img src="/images/landing/stat.png" alt="w-" class="hidden lg:block lg:w-auto xl:w-152.25" />
         <img src="/images/landing/stat-mobile.png" alt="w" class=" lg:hidden lg:w-120.25" />
       </div>
