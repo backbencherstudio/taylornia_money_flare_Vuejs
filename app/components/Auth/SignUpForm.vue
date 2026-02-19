@@ -191,7 +191,7 @@ const showConfirmPassword = ref(false);
   </div>
 </template>
 
-<style scoped>
+<style>
 .image-wrapper {
   position: relative;
   border-radius: 24px;
