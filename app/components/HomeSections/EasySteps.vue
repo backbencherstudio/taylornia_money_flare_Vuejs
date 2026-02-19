@@ -3,7 +3,7 @@ import SectionHeading from '~/components/Reusable/SectionHeading.vue';
 </script>
 
 <template>
-    <section class="xl:max-w-312 mx-auto px-6">
+    <section class="xl:max-w-7xl mx-auto px-6">
         <div class="mb-12.5">
             <SectionHeading title="Your Financial Partner in 3 Easy Steps" description="" align="center" />
         </div>

@@ -16,7 +16,7 @@ const navLinks = [
 
 <template>
   <nav class="bg-[#03030333] backdrop-blur-[5px] border-b border-white/10 fixed w-full z-50">
-    <div class="max-w-312 mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between py-2 xl:py-5">
         <div class="flex items-center gap-10">
           <NuxtLink

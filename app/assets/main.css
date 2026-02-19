@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+*{
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "DM Sans";
   src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");

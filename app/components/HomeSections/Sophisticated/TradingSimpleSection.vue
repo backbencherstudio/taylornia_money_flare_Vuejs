@@ -5,7 +5,7 @@ import SectionHeading from "~/components/Reusable/SectionHeading.vue";
 </script>
 
 <template>
-  <div class="max-w-312 mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="mb-10 lg:mb-30">
       <SectionHeading
         title="Sophisticated AI Makes Trading Simple"
@@ -89,7 +89,7 @@ import SectionHeading from "~/components/Reusable/SectionHeading.vue";
           </h1>
           <p class="text-center mb-7.5 text-[#CCC]">
             Your assets remain under your control through secure, API-based
-            connections.  MoneyFlare never takes custody of your funds,
+            connections. MoneyFlare never takes custody of your funds,
             ensuring.
           </p>
           <button
