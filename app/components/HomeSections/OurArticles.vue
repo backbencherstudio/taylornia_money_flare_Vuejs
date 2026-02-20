@@ -49,7 +49,7 @@ const articles = [
   },
 ];
 
-const carouselBreakpoints = {
+const carouselBreakpoints:any = {
   0: {
     itemsToShow: 1,
     snapAlign: "start",
