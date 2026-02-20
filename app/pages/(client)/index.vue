@@ -6,6 +6,7 @@ import InvestSection from "~/components/HomeSections/InvestSection.vue";
 import OurArticles from "~/components/HomeSections/OurArticles.vue";
 import PowerfulFeatures from "~/components/HomeSections/PowerfulFeatures.vue";
 import SophisticatedAI from "~/components/HomeSections/Sophisticated/SophisticatedAI.vue";
+import MarketUpdate from "~/components/MarketUpdate/MarketUpdate.vue";
 
 definePageMeta({
   layout: "client",
@@ -19,6 +20,7 @@ definePageMeta({
     <EasySteps />
     <PowerfulFeatures />
     <InvestSection />
+    <MarketUpdate/>
     <OurArticles />
     <FAQ />
   </div>
