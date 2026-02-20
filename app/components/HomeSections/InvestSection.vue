@@ -6,16 +6,30 @@ import { ref, onMounted, onBeforeUnmount, computed, nextTick } from "vue";
 const containerRef = ref<HTMLElement | null>(null);
 const barCount = ref(0);
 
-const ranges = ["1D", "1W", "1M", "1Y"];
+const ranges = ["1D", "1W", "1M", "1Y"] as const;
 type Range = (typeof ranges)[number];
 const activeRange = ref<Range>("1M");
 const barGap = 10;
-const rangeRatio = {
+const rangeRatio: Record<Range, number> = {
   "1D": 0.3,
   "1W": 0.45,
   "1M": 0.6,
   "1Y": 0.8,
-} as const;
+};
+const now = ref(new Date());
+let nowTimer: ReturnType<typeof setInterval> | null = null;
+
+const timeFormatter = new Intl.DateTimeFormat("en-US", {
+  hour: "numeric",
+  minute: "2-digit",
+});
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+});
+const monthFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+});
 
 const calculateBars = () => {
   if (!containerRef.value) return;
@@ -33,6 +47,38 @@ const activeBarCount = computed(() =>
   Math.max(1, Math.floor(barCount.value * rangeRatio[activeRange.value])),
 );
 
+const timeRangeLabels = computed(() => {
+  const endDate = now.value;
+  const startDate = new Date(endDate);
+
+  switch (activeRange.value) {
+    case "1D":
+      startDate.setDate(startDate.getDate() - 1);
+      return {
+        start: timeFormatter.format(startDate),
+        end: timeFormatter.format(endDate),
+      };
+    case "1W":
+      startDate.setDate(startDate.getDate() - 6);
+      return {
+        start: dateFormatter.format(startDate),
+        end: dateFormatter.format(endDate),
+      };
+    case "1M":
+      startDate.setMonth(startDate.getMonth() - 1);
+      return {
+        start: dateFormatter.format(startDate),
+        end: dateFormatter.format(endDate),
+      };
+    case "1Y":
+      startDate.setFullYear(startDate.getFullYear() - 1);
+      return {
+        start: monthFormatter.format(startDate),
+        end: monthFormatter.format(endDate),
+      };
+  }
+});
+
 const setRange = (range: Range) => {
   activeRange.value = range;
 };
@@ -42,16 +88,25 @@ onMounted(() => {
     calculateBars();
     window.addEventListener("resize", calculateBars);
   });
+
+  nowTimer = setInterval(() => {
+    now.value = new Date();
+  }, 60 * 1000);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", calculateBars);
+
+  if (nowTimer) {
+    clearInterval(nowTimer);
+    nowTimer = null;
+  }
 });
 </script>
 
 <template>
-  <section class="py-20 xl:py-45 relative">
-    <img src="/bg-lights2.svg" alt="" class="absolute top-0" />
+  <section class="py-20 xl:py-45 relative overflow-hidden">
+    <img src="/bg-lights2.svg" alt="" class="absolute -top-105 right-0" />
     <div class="max-w-7xl mx-auto px-6 xl:px-10">
       <div>
         <SectionHeading
@@ -63,7 +118,7 @@ onBeforeUnmount(() => {
       <div class="grid lg:grid-cols-2 gap-5 lg:gap-6 mt-10 lg:mt-12.5">
         <div class="space-y-5 lg:space-y-6">
           <div
-            class="bg-[#080808CC] px-8 py-5.5 backdrop-blur-2xl border border-[#222222] rounded-3xl"
+            class="bg-[#080808CC] px-8 py-5.5 backdrop-blur border border-[#222222] rounded-3xl"
           >
             <div class="mb-7">
               <h2
@@ -162,6 +217,7 @@ onBeforeUnmount(() => {
                     <button
                       v-for="range in ranges"
                       :key="range"
+                      type="button"
                       @click="setRange(range)"
                       :class="[
                         'px-3 py-2 rounded-md transition',
@@ -176,8 +232,8 @@ onBeforeUnmount(() => {
                 </div>
 
                 <div class="mt-3 text-sm flex justify-between items-center">
-                  <p>0</p>
-                  <p>100</p>
+                  <p>{{ timeRangeLabels.start }}</p>
+                  <p>{{ timeRangeLabels.end }}</p>
                 </div>
               </div>
 
