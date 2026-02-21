@@ -111,7 +111,7 @@ const plans = [
         AI Trading Plans
       </h1>
     </div>
-    <div class="max-w-7xl mx-auto px-6 xl:px-10 py-20 lg:py-30 relative Z-10">
+    <div class="max-w-7xl mx-auto px-6 xl:px-10 pt-20 lg:pt-30 relative Z-10">
       <SectionHeading
         title="AI quant trading investment plans"
         align="center"

@@ -19,7 +19,7 @@ const marketRows: MarketRow[] = [
   {
     id: 1,
     symbol: "ETH",
-    icon: "/images/landing/ethereum.png",
+    icon: "/images/landing/coin.png",
     lastPrice: "$0.00123",
     volume: "$2.1K",
     marketCap: "$420,300",
@@ -30,7 +30,7 @@ const marketRows: MarketRow[] = [
   {
     id: 2,
     symbol: "NEM",
-    icon: "/images/landing/cosmos.png",
+    icon: "/images/landing/coin2.png",
     lastPrice: "$0.00123",
     volume: "$1.7K",
     marketCap: "$510,000",
@@ -42,7 +42,7 @@ const marketRows: MarketRow[] = [
   {
     id: 3,
     symbol: "ETH",
-    icon: "/images/landing/ethereum.png",
+    icon: "/images/landing/coin.png",
     lastPrice: "$0.00123",
     volume: "$2.1K",
     marketCap: "$420,300",
@@ -53,7 +53,7 @@ const marketRows: MarketRow[] = [
   {
     id: 4,
     symbol: "EDR",
-    icon: "/images/landing/elrond.png",
+    icon: "/images/landing/coin4.png",
     lastPrice: "$0.00123",
     volume: "$2.1K",
     marketCap: "$420,300",
@@ -64,7 +64,7 @@ const marketRows: MarketRow[] = [
   {
     id: 5,
     symbol: "VIN",
-    icon: "/images/landing/stacks.png",
+    icon: "/images/landing/coin5.png",
     lastPrice: "$0.00123",
     volume: "$2.1K",
     marketCap: "$420,300",
@@ -75,7 +75,7 @@ const marketRows: MarketRow[] = [
   {
     id: 6,
     symbol: "BNB",
-    icon: "/images/landing/polygon.png",
+    icon: "/images/landing/coin6.png",
     lastPrice: "$0.00123",
     volume: "$2.1K",
     marketCap: "$420,300",
@@ -86,7 +86,7 @@ const marketRows: MarketRow[] = [
   {
     id: 7,
     symbol: "PPC",
-    icon: "/images/landing/cosmos.png",
+    icon: "/images/landing/coin7.png",
     lastPrice: "$0.00123",
     volume: "$2.1K",
     marketCap: "$420,300",
@@ -115,9 +115,9 @@ const rowCellClass = (row: MarketRow, index: number) => {
     <div
       class="h-16 max-w-6xl mx-auto bg-[#2BFFC366] rounded-full blur-[46px] relative z-20 -mb-15"
     />
-    <div class="h-16 max-w-4xl mx-auto bg-[#2bffc3] rounded-full -mb-10 blur-md" />
+    <div class="h-10 xl:h-16 w-56 xl:w-4xl mx-auto bg-[#2bffc3]/50 rounded-full -mb-10 blur-md" />
     <!-- decoration -->
-    <div class="mx-auto max-w-7xl px-6 xl:px-10 relative z-30">
+    <div class="mx-auto max-w-7xl  relative z-30">
       <div
         class="rounded-[30px] border border-[#222222] bg-[#050505] p-6 sm:p-8 lg:p-10 xl:p-12"
       >
