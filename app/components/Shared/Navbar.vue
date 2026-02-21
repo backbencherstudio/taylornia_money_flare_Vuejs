@@ -3,6 +3,7 @@ import MenuIcon from "../Icons/MenuIcon.vue";
 import Language from "./Language.vue";
 
 const isMenuOpen = ref(false);
+const route = useRoute();
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -11,6 +12,11 @@ const navLinks = [
   { label: "Referral Program", to: "/referral-program" },
   { label: "About", to: "/about" },
 ];
+
+const isActiveLink = (to: string) => {
+  if (to === "/") return route.path === "/";
+  return route.path === to || route.path.startsWith(`${to}/`);
+};
 
 </script>
 
@@ -25,7 +31,8 @@ const navLinks = [
           </NuxtLink>
           <div class="hidden lg:flex items-center gap-2.5 text-white/80 text-sm lg:text-base">
             <template v-for="(link, index) in navLinks" :key="link.label">
-              <NuxtLink :to="link.to" class="text-sm">
+              <NuxtLink :to="link.to" class="text-sm transition-colors"
+                :class="isActiveLink(link.to) ? 'text-primary' : 'text-white/80 hover:text-white'">
                 {{ link.label }}
               </NuxtLink>
               <span v-if="index < navLinks.length - 1" class="w-1 h-1 rounded-full bg-white/40" />
@@ -70,7 +77,8 @@ const navLinks = [
 
           <nav class="flex flex-col gap-4 text-white/80">
             <NuxtLink v-for="link in navLinks" :key="link.label" :to="link.to"
-              class="hover:text-primary transition-colors" @click="isMenuOpen = false">
+              class="transition-colors" :class="isActiveLink(link.to) ? 'text-primary' : 'text-white/80 hover:text-primary'"
+              @click="isMenuOpen = false">
               {{ link.label }}
             </NuxtLink>
           </nav>
