@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { ref, watch } from "vue";
+import type { TradingPlan } from "~/types/tradingPlan";
 import BaseButtonLink from "../Reusable/BaseButtonLink.vue";
 import SectionHeading from "../Reusable/SectionHeading.vue";
+import TradingPlanModal from "../Reusable/TradingPlanModal.vue";
 
-const plans = [
+const plans: TradingPlan[] = [
   {
     name: "Antminer L9 16Gh/s",
     price: 16000,
@@ -94,6 +97,41 @@ const plans = [
     principalRefund: true,
   },
 ];
+
+const isModalOpen = ref(false);
+const selectedPlan = ref<TradingPlan | null>(null);
+
+const currencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+const formatCurrency = (value: number) => currencyFormatter.format(value);
+const formatCompactCurrency = (value: number) => compactCurrencyFormatter.format(value);
+
+const openPlanModal = (plan: TradingPlan) => {
+  selectedPlan.value = plan;
+  isModalOpen.value = true;
+};
+
+watch(isModalOpen, (isOpen) => {
+  if (!isOpen) {
+    selectedPlan.value = null;
+  }
+});
+
+const handleBuyPlan = () => {
+  isModalOpen.value = false;
+};
 </script>
 
 <template>
@@ -111,7 +149,8 @@ const plans = [
         AI Trading Plans
       </h1>
     </div>
-    <div class="max-w-7xl mx-auto px-6 xl:px-10 pt-20 lg:pt-30 relative Z-10">
+
+    <div class="max-w-7xl mx-auto px-6 xl:px-10 pt-20 lg:pt-30 relative z-10">
       <SectionHeading
         title="AI quant trading investment plans"
         align="center"
@@ -123,7 +162,7 @@ const plans = [
           class="bg-[#080808] border border-[#222222] rounded-2xl p-7 flex flex-col sm:flex-row gap-7.5"
         >
           <div class="sm:w-1/2">
-            <img src="/plan-image2.png" alt="" class="" />
+            <img src="/plan-image2.png" alt="" />
             <p
               class="bg-linear-to-b to-[#1A9975] from-[#2BFFC3] text-transparent bg-clip-text font-dm font-medium leading-[187%] text-center"
             >
@@ -133,13 +172,14 @@ const plans = [
               24-Hour Profit Payout
             </p>
           </div>
+
           <div class="sm:w-1/2">
             <div class="mb-1.5 flex justify-between items-center w-full">
               <h2 class="text-[22px] font-semibold leading-[136%]">
-                {{ plan.price }}
+                {{ formatCompactCurrency(plan.price) }}
               </h2>
               <p class="text-xs text-[#CCC]">
-                {{ plan.duration }} Dags Duration
+                {{ plan.duration }} Days Duration
               </p>
             </div>
             <div>
@@ -151,7 +191,9 @@ const plans = [
                 >
                   Daily Profit
                 </p>
-                <p class="text-sm text-[#CCC]">{{ plan.dailyProfit }}</p>
+                <p class="text-sm text-[#CCC]">
+                  {{ formatCurrency(plan.dailyProfit) }}
+                </p>
               </div>
               <div
                 class="flex justify-between items-center py-2.5 border-b border-[#222222]"
@@ -161,7 +203,9 @@ const plans = [
                 >
                   Total Net Profit
                 </p>
-                <p class="text-sm text-[#CCC]">{{ plan.totalNetProfit }}</p>
+                <p class="text-sm text-[#CCC]">
+                  {{ formatCurrency(plan.totalNetProfit) }}
+                </p>
               </div>
               <div
                 class="flex justify-between items-center py-2.5 border-b border-[#222222]"
@@ -171,7 +215,9 @@ const plans = [
                 >
                   Referral Reward
                 </p>
-                <p class="text-sm text-[#CCC]">{{ plan.referralReward }}</p>
+                <p class="text-sm text-[#CCC]">
+                  {{ formatCurrency(plan.referralReward) }}
+                </p>
               </div>
               <div
                 class="flex justify-between items-center py-2.5 border-b border-[#222222]"
@@ -187,12 +233,19 @@ const plans = [
               </div>
             </div>
             <div class="mt-5">
-              <BaseButtonLink class="w-full">Invest Now</BaseButtonLink>
+              <BaseButtonLink class="w-full" @click="openPlanModal(plan)"
+                >Invest Now</BaseButtonLink
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
+    <TradingPlanModal
+      v-model="isModalOpen"
+      :plan="selectedPlan"
+      @buy="handleBuyPlan"
+    />
   </section>
 </template>
 
