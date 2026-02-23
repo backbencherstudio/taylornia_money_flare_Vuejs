@@ -136,6 +136,7 @@ const handleBuyPlan = () => {
 
 <template>
   <section class="relative overflow-hidden">
+    <!-- Decoration -->
     <img
       src="/bg-lights.svg"
       alt=""
