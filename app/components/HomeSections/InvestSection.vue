@@ -5,6 +5,8 @@ import { ref, onMounted, onBeforeUnmount, computed, nextTick } from "vue";
 
 const containerRef = ref<HTMLElement | null>(null);
 const barCount = ref(0);
+const route = useRoute()
+const hideImage = computed(() => route.path === '/ai-trading-plans')
 
 const ranges = ["1D", "1W", "1M", "1Y"] as const;
 type Range = (typeof ranges)[number];
@@ -106,7 +108,7 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="py-20 xl:py-45 relative overflow-hidden">
-    <img src="/bg-lights2.svg" alt="" class="absolute -top-105 right-0" />
+    <img v-if="!hideImage" src="/bg-lights2.svg" alt="" class="absolute xl:-top-105 right-0" />
     <div class="max-w-7xl mx-auto px-6 xl:px-10">
       <div>
         <SectionHeading

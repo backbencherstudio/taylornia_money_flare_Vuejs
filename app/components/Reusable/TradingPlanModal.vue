@@ -206,7 +206,7 @@ onBeforeUnmount(() => {
       @click="handleOverlayClick"
     >
       <div
-        class="mx-auto w-full max-w-7xl rounded-[20px] border border-[#2BFFC3]/65 bg-[#030303] shadow-[0_0_0_1px_rgba(43,255,195,0.3),0_0_36px_rgba(43,255,195,0.55)]"
+        class="max-w-7xl mx-auto w-full rounded-[20px] border border-[#2BFFC3]/65 bg-[#030303] shadow-[0_0_0_1px_rgba(43,255,195,0.3),0_0_36px_rgba(43,255,195,0.55)]"
       >
         <div class="relative rounded-[30px] bg-[#050505] p-5 sm:p-8 lg:p-10">
           <button
