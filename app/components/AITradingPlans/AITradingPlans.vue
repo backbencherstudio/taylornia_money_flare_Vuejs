@@ -140,7 +140,7 @@ const handleBuyPlan = () => {
     <img
       src="/bg-lights.svg"
       alt=""
-      class="absolute lg:-top-120 -right-20 rotate-45 z-0"
+      class="absolute -top-60 -right-20 lg:-top-100 xl:-top-120 lg:-right-20 rotate-45 lg:rotate-45 z-0 h-150 lg:h-auto"
     />
 
     <div class="pt-25 xl:pt-40 relative z-10">
