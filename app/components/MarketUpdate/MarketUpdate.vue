@@ -110,14 +110,14 @@ const rowCellClass = (row: MarketRow, index: number) => {
 </script>
 
 <template>
-  <section class="relative">
+  <section class="relative ">
     <!-- decoration -->
     <div
       class="h-16 max-w-6xl mx-auto bg-[#2BFFC366] rounded-full blur-[46px] relative z-20 -mb-15"
     />
     <div class="h-10 xl:h-16 w-56 xl:w-4xl mx-auto bg-[#2bffc3]/50 rounded-full -mb-10 blur-md" />
     <!-- decoration -->
-    <div class="mx-auto max-w-7xl  relative z-30">
+    <div class="mx-auto max-w-7xl px-6 xl:px-10  relative z-30">
       <div
         class="rounded-[30px] border border-[#222222] bg-[#050505] p-6 sm:p-8 lg:p-10 xl:p-12"
       >

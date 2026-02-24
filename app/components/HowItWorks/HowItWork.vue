@@ -41,9 +41,9 @@ const getStepNumber = (index: number): string =>
 <template>
   <div>
     <section
-      class="relative isolate overflow-hidden px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16"
+      class="relative isolate overflow-hidden "
     >
-      <div class="max-w-7xl mx-auto px-6 xl:px-10 py-30 lg:py-45">
+      <div class="max-w-7xl mx-auto px-6 xl:px-10 lg:py-45">
         <div class="relative">
           <span
             class="absolute left-5 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-white/60 md:left-1/2"
@@ -63,34 +63,34 @@ const getStepNumber = (index: number): string =>
             >
               <div class="absolute left-5 top-0 -translate-x-1/2 md:left-1/2">
                 <div
-                  class="grid h-9 w-9 place-items-center rounded-xl bg-linear-to-b from-[#2BFFC3] to-[#1A9975] shadow-[0_10px_28px_rgba(43,255,195,0.35)]"
+                  class="grid h-9 w-9 lg:h-20 lg:w-20 place-items-center rounded-xl bg-linear-to-b from-[#2BFFC3] to-[#1A9975] shadow-[0_10px_28px_rgba(43,255,195,0.35)]"
                 >
                   <span
-                    class="relative h-4 w-4 rounded-full border border-black/55"
+                    class="relative lg:h-10 lg:w-10 rounded-full border-4 border-[#0f3e31]"
                   >
                     <span
-                      class="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/60"
+                      class="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full  border-4 border-[#0f3e31]"
                     />
                   </span>
                 </div>
               </div>
 
               <article
-                class="relative col-start-2 pt-1"
+                class="relative col-start-2 pt-1 "
                 :class="
                   index % 2 === 0
-                    ? 'md:col-start-1 md:justify-self-end md:max-w-3xl md:pr-16 md:text-right'
-                    : 'md:col-start-2 md:max-w-3xl md:pl-16'
+                    ? 'md:col-start-1 md:justify-self-end md:max-w-3xl pl-10 sm:pr-10 lg:pr-36 md:text-right'
+                    : 'md:col-start-2 md:max-w-3xl pl-10 sm:pl-10 lg:pl-36'
                 "
               >
                 <p
-                  class="pointer-events-none absolute -top-4 hidden select-none text-[4.5rem] leading-none font-semibold tracking-[-0.06em] text-white/8 md:block"
-                  :class="index % 2 === 0 ? '-right-36' : '-left-36'"
+                  class="pointer-events-none absolute -top-2.5 hidden select-none text-[4.5rem] xl:text-[100px] leading-none font-bold tracking-[-0.06em] bg-linear-to-b from-white/20 to-black/20 bg-clip-text text-transparent md:block"
+                  :class="index % 2 === 0 ? 'sm:-right-32 lg:-right-63' : 'sm:-left-32  lg:-left-63'"
                 >
                   {{ getStepNumber(index) }}
                 </p>
 
-                <h3 class="font-dm text-[1.75rem] leading-[1.05] text-white">
+                <h3 class="font-dm  text-2xl lg:text-[2rem] leading-[150%] tracking-[-0.64px] text-white">
                   {{ step.title }}
                 </h3>
                 <p class="mt-3.5 text-sm leading-[1.65] text-[#A4A4A4]">
