@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Footer from '~/components/Shared/Footer.vue';
 import Navbar from '~/components/Shared/Navbar.vue';
 
 </script>
@@ -6,8 +7,9 @@ import Navbar from '~/components/Shared/Navbar.vue';
 <template>
   <div class="">
     <main class="">
-      <navbar/>
+      <Navbar/>
       <slot />
+      <Footer/>
     </main>
   </div>
 </template>
