@@ -19,7 +19,7 @@ const buttonClass = computed(() => {
     "leading-[150%] font-medium text-sm rounded-full px-6.75 py-3 transition-all duration-200";
 
   const variants = {
-    primary: "btn-bg border border-[#2BFFC3] text-black hover:opacity-90",
+    primary: " bg-linear-to-t from-[#1a9975] to-[#2bffc3] border border-[#2BFFC3] text-black hover:opacity-90",
     outline:
       "border border-[#2BFFC3] text-[#2BFFC3] hover:bg-[#2BFFC3] hover:text-black",
   };
