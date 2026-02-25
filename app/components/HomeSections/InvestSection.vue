@@ -224,8 +224,8 @@ onBeforeUnmount(() => {
                       :class="[
                         'px-3 py-2 rounded-md transition',
                         activeRange === range
-                          ? 'bg-green-500 text-black'
-                          : 'bg-[#18191D]',
+                          ? 'bg-[#18191D] text-white'
+                          : '',
                       ]"
                     >
                       {{ range }}
