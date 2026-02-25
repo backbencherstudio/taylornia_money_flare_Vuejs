@@ -4,7 +4,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
 </script>
 
 <template>
-  <section class="py-20 lg:py-45">
+  <section class="py-20 lg:py-45 relative z-10">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div
         class="flex flex-col lg:flex-row items-center justify-between gap-10"

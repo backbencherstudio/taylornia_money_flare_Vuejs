@@ -5,7 +5,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
 <template>
   <section class="relative">
     <div class="absolute bottom-0 h-10  bg-[#030303] w-full"></div>
-    <div class="max-w-7xl mx-auto px-6 xl:px-10 flex justify-between gap-10 items-center relative z-10">
+    <div class="max-w-7xl mx-auto px-6 xl:px-10 flex flex-col lg:flex-row justify-between gap-10 items-center relative z-10">
       <div>
         <div class="mb-6">
           <SectionHeading title="How the Plans Differ" align="left" />
