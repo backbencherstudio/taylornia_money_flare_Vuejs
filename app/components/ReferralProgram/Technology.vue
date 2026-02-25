@@ -30,7 +30,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
           </div>
         </div>
         <div>
-          <img src="/graph.png" alt="" class="lg:w-131" />
+          <img src="/graph1.png" alt="" class="lg:w-131" />
         </div>
       </div>
     </div>
