@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import LoveFileIcon from '~/components/Icons/LoveFileIcon.vue';
+import PaperBoard from '~/components/Icons/PaperBoard.vue';
+import SectionHeading from '~/components/Reusable/SectionHeading.vue';
 
 definePageMeta({
   layout: "client",
@@ -15,8 +18,32 @@ definePageMeta({
           About MoneyFlare
         </h1>
       </div>
-      <div>
-         
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between gap-10 pt-25"
+      >
+        <div class="lg:w-143.75">
+          <SectionHeading
+            title="A Trusted AI Financial Platform"
+            description="MoneyFlare is a professional AI-powered cryptocurrency quantitative trading platform built to deliver automated trading through structured technology and disciplined execution. The platform is designed to operate with stability, clarity, and long-term reliability, positioning MoneyFlare as a serious financial technology brand rather than a short-term trading product."
+            align="left"
+          />
+          <p class="text-[3.7vw] sm:text-base text-neutral-400 leading-[160%] mt-3.5 md:mt-4">Every aspect of MoneyFlare reflects a commitment to trust, professional standards, and responsible innovation.</p>
+          <div class="flex gap-6 mt-7.5 lg:mt-10">
+            <div>
+              <PaperBoard />
+            </div>
+            <div>
+              <h1 class="text-lg lg:text-2xl font-dm">Predictive Modeling</h1>
+              <p class="text-sm text-[#CCC] leading-[160%] mt-3">
+                Leverage cutting-edge predictive analytics to forecast future
+                trends and outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="/about.png" alt="" class="lg:w-131" />
+        </div>
       </div>
     </div>
 
