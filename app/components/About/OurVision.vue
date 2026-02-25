@@ -1,15 +1,77 @@
 <script setup lang="ts">
-import ArrowLeft from "../Icons/ArrowLeft.vue";
+import { Carousel, Slide } from "vue3-carousel";
+import "vue3-carousel/carousel.css";
 import WalletIcon from "../Icons/WalletIcon.vue";
+
+const visionCards = [
+  {
+    id: 1,
+    title: "Intelligent Automation",
+    description:
+      "We simplify complex trading through disciplined AI systems that operate automatically, consistently, and without emotional decision-making.",
+    outerClass: "bg-linear-to-l to-[#1f1f1f] from-[#1f1f1f] rounded-3xl p-px",
+    innerClass: "bg-[#080808] rounded-3xl px-7 py-10.75",
+  },
+  {
+    id: 2,
+    title: "Professional Foundation",
+    description:
+      "Our platform is built on structured quantitative methods and professional oversight to ensure reliability and long-term stability.",
+    outerClass: "border border-[#2BFFC366] rounded-3xl",
+    innerClass: "bg-grad rounded-3xl px-7 py-10.75",
+  },
+  {
+    id: 3,
+    title: "Responsible Innovation",
+    description:
+      "We advance AI-driven finance with a focus on transparency, controlled risk, and long-term trust.",
+    outerClass:
+      "lg:col-span-3 xl:col-span-1 bg-linear-to-l to-[#1f1f1f] from-[#1f1f1f] rounded-3xl p-px",
+    innerClass: "bg-[#080808] rounded-3xl px-7 py-10.75 h-full",
+  },
+];
 </script>
 
 <template>
   <section class="max-w-7xl mx-auto px-6 xl:px-10 mb-20 lg:mb-45">
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-      <div
-        class="bg-linear-to-l to-[#1f1f1f] from-[#1f1f1f] rounded-3xl p-px "
+    <div class="lg:hidden">
+      <Carousel
+        :items-to-show="1"
+        :items-to-scroll="1"
+        :wrap-around="false"
+        :transition="450"
+        :mouse-drag="true"
+        :touch-drag="true"
+        :gap="14"
+        class="our-vision-carousel"
       >
-        <div class="bg-[#080808] rounded-3xl px-7 py-10.75">
+        <Slide v-for="card in visionCards" :key="`vision-mobile-${card.id}`">
+          <div class="w-full" :class="card.outerClass">
+            <div :class="card.innerClass">
+              <div class="flex justify-center mb-13.5">
+                <button
+                  class="w-18 h-18 bg-linear-to-b to-[#1A9975] from-[#2BFFC3] rounded-xl flex items-center justify-center"
+                >
+                  <WalletIcon />
+                </button>
+              </div>
+              <h1
+                class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]"
+              >
+                {{ card.title }}
+              </h1>
+              <p class="text-center text-[#CCC]">
+                {{ card.description }}
+              </p>
+            </div>
+          </div>
+        </Slide>
+      </Carousel>
+    </div>
+
+    <div class="hidden lg:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div v-for="card in visionCards" :key="card.id" :class="card.outerClass">
+        <div :class="card.innerClass">
           <div class="flex justify-center mb-13.5">
             <button
               class="w-18 h-18 bg-linear-to-b to-[#1A9975] from-[#2BFFC3] rounded-xl flex items-center justify-center"
@@ -17,53 +79,11 @@ import WalletIcon from "../Icons/WalletIcon.vue";
               <WalletIcon />
             </button>
           </div>
-          <h1
-            class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]"
-          >
-            Intelligent Automation
+          <h1 class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]">
+            {{ card.title }}
           </h1>
           <p class="text-center text-[#CCC]">
-           We simplify complex trading through disciplined AI systems that operate automatically, consistently, and without emotional decision-making.
-          </p>
-        </div>
-      </div>
-      <div class="border border-[#2BFFC366] rounded-3xl">
-        <div class="bg-grad rounded-3xl px-7 py-10.75">
-          <div class="flex justify-center mb-13.5">
-            <button
-              class="w-18 h-18 bg-linear-to-b to-[#1A9975] from-[#2BFFC3] rounded-xl flex items-center justify-center"
-            >
-              <WalletIcon />
-            </button>
-          </div>
-          <h1
-            class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]"
-          >
-            Professional Foundation
-          </h1>
-          <p class="text-center text-[#CCC]">
-            Our platform is built on structured quantitative methods and professional oversight to ensure reliability and long-term stability.
-          </p>
-        </div>
-      </div>
-      <div
-        class="lg:col-span-3 xl:col-span-1 bg-linear-to-l to-[#1f1f1f] from-[#1f1f1f] rounded-3xl p-px  "
-      >
-        <div class="bg-[#080808] rounded-3xl px-7 py-10.75 h-full">
-          <div class="flex justify-center mb-13.5">
-            <button
-              class="w-18 h-18 bg-linear-to-b to-[#1A9975] from-[#2BFFC3] rounded-xl flex items-center justify-center"
-            >
-              <WalletIcon />
-            </button>
-          </div>
-          <h1
-            class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]"
-          >
-            Responsible Innovation
-          </h1>
-          <p class="text-center text-[#CCC]">
-            We advance AI-driven finance with a focus on transparency, controlled risk, and long-term trust.
+            {{ card.description }}
           </p>
         </div>
       </div>
@@ -81,5 +101,10 @@ import WalletIcon from "../Icons/WalletIcon.vue";
   box-shadow:
     0 9px 100px 0 rgba(43, 255, 195, 0.2),
     0 0 50px 0 rgba(43, 255, 195, 0.1);
+}
+
+.our-vision-carousel :deep(.carousel__slide) {
+  align-items: stretch;
+  padding-inline: 0.125rem;
 }
 </style>
