@@ -24,7 +24,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
               <h1 class="text-lg lg:text-2xl font-dm">Predictive Modeling</h1>
               <p class="text-sm text-[#CCC] leading-[160%] mt-3">
                 Leverage cutting-edge predictive analytics to forecast future
-                trends and outcomes.
+                trends and outcomes. 
               </p>
             </div>
           </div>
