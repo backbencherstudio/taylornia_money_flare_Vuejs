@@ -7,6 +7,7 @@ import PaperIcon from "~/components/Icons/PaperIcon.vue";
 import StarIcon from "~/components/Icons/StarIcon.vue";
 import MarketUpdate from "~/components/MarketUpdate/MarketUpdate.vue";
 import ReferNow from "~/components/ReferralProgram/ReferNow.vue";
+import Technology from "~/components/ReferralProgram/Technology.vue";
 
 definePageMeta({
   layout: "client",
@@ -93,6 +94,7 @@ const features = [
     />
   </section>
   <ReferNow />
+  <Technology />
   <div class="py-20">
     <MarketUpdate />
   </div>

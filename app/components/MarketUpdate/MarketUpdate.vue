@@ -117,7 +117,7 @@ const rowCellClass = (row: MarketRow, index: number) => {
     />
     <div class="h-10 xl:h-16 w-56 xl:w-4xl mx-auto bg-[#2bffc3]/50 rounded-full -mb-10 blur-md" />
     <!-- decoration -->
-    <div class="mx-auto max-w-7xl px-6 xl:px-10  relative z-30">
+    <div class="mx-auto max-w-7xl  xl:px-10  relative z-30">
       <div
         class="rounded-[30px] border border-[#222222] bg-[#050505] p-6 sm:p-8 lg:p-10 xl:p-12"
       >
