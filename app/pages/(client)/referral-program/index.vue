@@ -78,19 +78,11 @@ const features = [
         </div>
       </div>
     </div>
-
-    <!-- decoration -->
-    <div
-      class="absolute -top-32 -left-32 lg:-top-100 lg:-left-100 blur-[125px] opacity-[0.2] w-54.75 h-54.75 lg:w-160.75 lg:h-160.75 bg-primary rounded-full"
-    />
-    <div
-      class="absolute -right-60 bottom-20 blur-[125px] w-54.75 h-54.75 lg:w-160.75 lg:h-160.75 bg-[#000000fd] rounded-full"
-    />
     <!-- Decoration -->
     <img
       src="/bg-lights.svg"
       alt=""
-      class="absolute -top-60 -right-20 lg:-top-100 xl:-top-120 lg:-right-20 rotate-45 lg:rotate-45 z-0 h-150 lg:h-auto"
+      class="absolute -top-60 -right-20 lg:-top-80 xl:-top-100 lg:-right-20 rotate-40 lg:rotate-40 z-0 h-150 lg:h-auto"
     />
   </section>
   <ReferNow />

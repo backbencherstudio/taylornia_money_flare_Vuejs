@@ -116,7 +116,8 @@ const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 const formatCurrency = (value: number) => currencyFormatter.format(value);
-const formatCompactCurrency = (value: number) => compactCurrencyFormatter.format(value);
+const formatCompactCurrency = (value: number) =>
+  compactCurrencyFormatter.format(value);
 
 const openPlanModal = (plan: TradingPlan) => {
   selectedPlan.value = plan;
