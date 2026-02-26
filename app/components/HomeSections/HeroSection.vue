@@ -25,7 +25,7 @@ const marqueeImages = [
       <div class="relative z-20 pt-15 xl:pt-25">
         <div class="lg:w-150 xl:w-193 ">
           <h1
-            class="text-[11.11vw] sm:text-[4rem] text-center font-dm text-[#FFFFFF99] font-medium leading-[109%] tracking-[-1.28px] mb-5 xl:mb-7.5"
+            class="text-[11.11vw] sm:text-[4rem] text-center font-dm text-white font-medium leading-[109%] tracking-[-1.28px] mb-5 xl:mb-7.5"
           >
             AI‑Driven Crypto Trading. Truly Automated. Truly Smart.
           </h1>

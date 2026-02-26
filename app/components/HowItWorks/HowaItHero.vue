@@ -5,7 +5,7 @@
     <div class="px-6 xl:px-10">
       <div class="pb-20 pt-25 xl:pt-40 relative z-10">
         <h1
-          class="text-[11.11vw] sm:text-[4rem] text-center font-dm text-[#FFFFFF99] font-medium leading-[109%] tracking-[-1.28px]"
+          class="text-[11.11vw] sm:text-[4rem] text-center font-dm text-white font-medium leading-[109%] tracking-[-1.28px]"
         >
           How MoneyFlare Works
         </h1>
