@@ -122,7 +122,7 @@ const logout = async () => {
             Menu
           </button>
         </div>
-        <div class="absolute bg-red-500 h-20 w-30 top-0 left-[80%] blur-[100px]" />
+        <div class="absolute bg-[#00ffb7] h-20 w-80 -top-20 left-[70%] blur-[100px] opacity-[0.4]" />
 
         <!-- Page Title -->
         <h1 class="hidden lg:block text-xl font-semibold text-white w-fit">
@@ -141,7 +141,7 @@ const logout = async () => {
         <img
           src="/bg-lights.svg"
           alt=""
-          class="absolute lg:-top-100 xl:-top-90 lg:-right-20 rotate-40 lg:rotate-40 z-0 h-150 lg:h-auto"
+          class="absolute lg:-top-100 xl:-top-80 lg:-right-20 rotate-40 lg:rotate-40 z-0 h-150 lg:h-auto"
         />
       </div>
     </main>
