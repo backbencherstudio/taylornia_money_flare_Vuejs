@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PigIcon from "~/components/Icons/PigIcon.vue";
 import WithdrawIcon from "~/components/Icons/WithdrawIcon.vue";
+import OverviewStatus from "./_Components/OverviewStatus.vue";
 </script>
 
 <template>
@@ -23,6 +24,9 @@ import WithdrawIcon from "~/components/Icons/WithdrawIcon.vue";
         </button>
       </div>
     </header>
+    <div>
+        <OverviewStatus/>
+    </div>
   </div>
 </template>
 
