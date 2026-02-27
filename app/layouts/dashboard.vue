@@ -1,9 +1,13 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-
-import DashboardIcon from "~/components/Icons/DashboardIcon.vue";
-import BaseButtonLink from "~/components/Reusable/BaseButtonLink.vue";
+import DashIcon from "~/components/Icons/DashIcon.vue";
+import DashIcon2 from "~/components/Icons/DashIcon2.vue";
+import DashIcon3 from "~/components/Icons/DashIcon3.vue";
+import DashIcon4 from "~/components/Icons/DashIcon4.vue";
+import DashIcon5 from "~/components/Icons/DashIcon5.vue";
+import DashIcon6 from "~/components/Icons/DashIcon6.vue";
+import DashIcon7 from "~/components/Icons/DashIcon7.vue";
 
 const sidebarOpen = ref(false);
 const toggleSidebar = () => {
@@ -15,17 +19,17 @@ const router = useRouter();
 
 /* Menu Items */
 const menuItems = [
-  { href: "/dashboard", icon: DashboardIcon, label: "Dashboard" },
-  { href: "/dashboard/start-mining", icon: DashboardIcon, label: "Plans" },
-  { href: "/dashboard/wallets", icon: DashboardIcon, label: "Wallets" },
-  { href: "/dashboard/orders", icon: DashboardIcon, label: "Orders" },
-  { href: "/dashboard/profit", icon: DashboardIcon, label: "Profit" },
+  { href: "/dashboard", icon: DashIcon, label: "Dashboard" },
+  { href: "/dashboard/start-mining", icon: DashIcon2, label: "Plans" },
+  { href: "/dashboard/wallets", icon: DashIcon3, label: "Wallets" },
+  { href: "/dashboard/orders", icon: DashIcon4, label: "Orders" },
+  { href: "/dashboard/profit", icon: DashIcon5, label: "Profit" },
   {
     href: "/dashboard/referral-rewards",
-    icon: DashboardIcon,
+    icon: DashIcon6,
     label: "Referral Rewards",
   },
-  { href: "/dashboard/settings", icon: DashboardIcon, label: "Settings" },
+  { href: "/dashboard/settings", icon: DashIcon7, label: "Settings" },
 ];
 
 const isActive = (href) => {
@@ -76,7 +80,7 @@ const logout = async () => {
           </NuxtLink>
         </div>
 
-        <nav class="mt-4 space-y-2 px-6 relative">
+        <nav class="mt-4 space-y-3 px-6 relative">
           <NuxtLink
             v-for="menuItem in menuItems"
             :key="menuItem.href"
@@ -110,7 +114,7 @@ const logout = async () => {
     <!-- Main Content -->
     <main class="flex-1 overflow-auto lg:ml-64">
       <div
-        class="flex justify-between items-center bg-[#08080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0 z-50"
+        class="flex justify-between items-center bg-[#08080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0 z-50 "
       >
         <!-- Mobile Menu Button -->
         <div class="lg:hidden">
@@ -118,6 +122,7 @@ const logout = async () => {
             Menu
           </button>
         </div>
+        <div class="absolute bg-red-500 h-20 w-30 top-0 left-[80%] blur-[100px]" />
 
         <!-- Page Title -->
         <h1 class="hidden lg:block text-xl font-semibold text-white w-fit">
