@@ -107,4 +107,3 @@ const articles = [
   </section>
 </template>
 
-<style scoped></style>
