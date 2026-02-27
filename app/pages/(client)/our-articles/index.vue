@@ -52,7 +52,7 @@ const articles = [
 </script>
 
 <template>
-  <section class="py-20 xl:py-45 relative overflow-hidden">
+  <section class="py-20 xl:py-45 relative overflow-hidden fade-in">
     <div class="max-w-7xl mx-auto px-6 xl:px-10">
       <div class="mb-20 lg:mb-30">
         <h1

@@ -10,7 +10,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
+  <div class="fade-in">
     <HowaItHero/>
     <HowItWork/>
     <StayOnTopSection/>

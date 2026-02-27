@@ -6,7 +6,7 @@ definePageMeta({
 </script>
 
 <template>
-  <section class="py-20 xl:py-45 relative overflow-hidden">
+  <section class="py-20 xl:py-45 relative overflow-hidden fade-in">
     <div class="mb-20 lg:mb-30">
       <h1
         class="text-[11.11vw] sm:text-[4rem] text-center font-dm text-white font-medium leading-[109%] tracking-[-1.28px]"

@@ -14,7 +14,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="">
+  <div class="fade-in">
     <HeroSection />
     <SophisticatedAI />
     <EasySteps />

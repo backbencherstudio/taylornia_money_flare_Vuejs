@@ -47,7 +47,7 @@ const features = [
 </script>
 
 <template>
-  <section class="relative overflow-hidden pb-20 pt-25 lg:py-45">
+  <section class="relative overflow-hidden pb-20 pt-25 lg:py-45 fade-in">
     <div class="max-w-7xl mx-auto px-6 xl:px-10 relative z-10">
       <div>
         <h1
