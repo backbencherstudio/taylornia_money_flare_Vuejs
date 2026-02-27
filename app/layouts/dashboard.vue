@@ -1,212 +1,144 @@
+<script setup>
+import { ref, computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+import DashboardIcon from "~/components/Icons/DashboardIcon.vue";
+import BaseButtonLink from "~/components/Reusable/BaseButtonLink.vue";
+
+const sidebarOpen = ref(false);
+const toggleSidebar = () => {
+  sidebarOpen.value = !sidebarOpen.value;
+};
+
+const route = useRoute();
+const router = useRouter();
+
+/* Menu Items */
+const menuItems = [
+  { href: "/dashboard", icon: DashboardIcon, label: "Dashboard" },
+  { href: "/dashboard/start-mining", icon: DashboardIcon, label: "Plans" },
+  { href: "/dashboard/wallets", icon: DashboardIcon, label: "Wallets" },
+  { href: "/dashboard/orders", icon: DashboardIcon, label: "Orders" },
+  { href: "/dashboard/profit", icon: DashboardIcon, label: "Profit" },
+  {
+    href: "/dashboard/referral-rewards",
+    icon: DashboardIcon,
+    label: "Referral Rewards",
+  },
+  { href: "/dashboard/settings", icon: DashboardIcon, label: "Settings" },
+];
+
+const isActive = (href) => {
+  if (href === "/dashboard") {
+    return route.path === "/dashboard";
+  }
+  return route.path.startsWith(href);
+};
+
+/* Dynamic Page Title */
+const pageTitle = computed(() => {
+  const matchedItem = [...menuItems]
+    .sort((a, b) => b.href.length - a.href.length)
+    .find((item) => route.path.startsWith(item.href));
+
+  return matchedItem ? matchedItem.label : "Page";
+});
+
+/* Logout */
+const logout = async () => {
+  if (process.client) {
+    localStorage.removeItem("token");
+  }
+  await router.push("/auth/login");
+};
+</script>
+
 <template>
-  <div class="dash-shell">
-    <aside class="dash-sidebar">
-      <div class="brand">
-        <span class="brand-mark"></span>
-        <span>MoneyFlare</span>
+  <div class="flex min-h-screen">
+    <!-- Mobile Backdrop -->
+    <div
+      v-if="sidebarOpen"
+      class="fixed inset-0 z-20 bg-black/20 lg:hidden"
+      @click="toggleSidebar"
+    />
+
+    <aside
+      :class="[
+        'fixed flex flex-col justify-between z-30 h-screen w-64 transform bg-[#080808] border-r border-[#222222] transition-transform duration-300 ease-in-out',
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full',
+        'lg:translate-x-0',
+      ]"
+    >
+      <div>
+        <div class="flex items-center py-5 px-6">
+          <NuxtLink to="/">
+            <img src="/logo.png" alt="logo" class="w-full" />
+          </NuxtLink>
+        </div>
+
+        <nav class="mt-4 space-y-2 px-6 relative">
+          <NuxtLink
+            v-for="menuItem in menuItems"
+            :key="menuItem.href"
+            :to="menuItem.href"
+            :class="[
+              'flex gap-2 items-center text-sm font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-300',
+              isActive(menuItem.href)
+                ? 'bg-linear-to-t from-[#1a9975] to-[#2bffc3] border border-[#2BFFC3] text-black'
+                : 'text-white hover:opacity-90',
+            ]"
+          >
+            <component :is="menuItem.icon" />
+            {{ menuItem.label }}
+          </NuxtLink>
+          <div
+            class="absolute top-full -left-30 bg-[#00ffb7] h-30 w-30 rounded-full blur-[125px] opacity-[]"
+          />
+        </nav>
       </div>
-      <nav class="dash-nav">
-        <NuxtLink to="/dashboard" class="dash-link">Overview</NuxtLink>
-        <NuxtLink to="/" class="dash-link">Return home</NuxtLink>
-        <NuxtLink to="/auth" class="dash-link ghost">Log out</NuxtLink>
-      </nav>
-      <div class="dash-meta">
-        <span class="label">Active</span>
-        <span class="value">Today</span>
+
+      <div class="mb-6 px-4">
+        <button
+          @click="logout"
+          class="flex items-center gap-2 text-base lg:text-lg text-white hover:bg-[#00e88711] w-full py-2 px-4 rounded-full duration-300 cursor-pointer"
+        >
+          Logout
+        </button>
       </div>
     </aside>
 
-    <div class="dash-body">
-      <header class="dash-top">
-        <div>
-          <p class="eyebrow">Dashboard</p>
-          <h1>Money overview</h1>
+    <!-- Main Content -->
+    <main class="flex-1 overflow-auto lg:ml-64">
+      <div
+        class="flex justify-between items-center bg-[#08080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0 z-50"
+      >
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button @click="toggleSidebar">
+            Menu
+          </button>
         </div>
-        <div class="actions">
-          <button class="btn ghost" type="button">Export</button>
-          <button class="btn primary" type="button">New flow</button>
-        </div>
-      </header>
 
-      <main class="dash-main">
-        <slot />
-      </main>
-    </div>
+        <!-- Page Title -->
+        <h1 class="hidden lg:block text-xl font-semibold text-white w-fit">
+          {{ pageTitle }}
+        </h1>
+
+        <div>Here will search</div>
+      </div>
+
+      <div class="p-4 mt-20 lg:mt-0 fade-in relative overflow-hidden h-screen">
+        <div class="relative z-20">
+          <slot />
+        </div>
+        <!-- Decoration -->
+        <div class="absolute inset-0 bg-black/5 backdrop-blur-sm z-10"></div>
+        <img
+          src="/bg-lights.svg"
+          alt=""
+          class="absolute lg:-top-100 xl:-top-90 lg:-right-20 rotate-40 lg:rotate-40 z-0 h-150 lg:h-auto"
+        />
+      </div>
+    </main>
   </div>
 </template>
-
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
-
-.dash-shell {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  background: #0f1218;
-  color: #f0f1f5;
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
-}
-
-.dash-sidebar {
-  padding: 32px 24px;
-  background:
-    linear-gradient(180deg, rgba(255, 178, 102, 0.2), transparent 70%),
-    #141923;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-}
-
-.brand-mark {
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #ffd56a, #ff7a5c);
-  box-shadow: 0 0 12px rgba(255, 130, 90, 0.6);
-}
-
-.dash-nav {
-  display: grid;
-  gap: 10px;
-}
-
-.dash-link {
-  text-decoration: none;
-  color: inherit;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  transition: all 0.2s ease;
-}
-
-.dash-link:hover {
-  background: rgba(255, 255, 255, 0.14);
-  transform: translateX(2px);
-}
-
-.dash-link.ghost {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.dash-meta {
-  margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: grid;
-  gap: 6px;
-}
-
-.label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: "IBM Plex Mono", "Courier New", monospace;
-}
-
-.value {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.dash-body {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-
-.dash-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(14, 17, 24, 0.9);
-  backdrop-filter: blur(6px);
-}
-
-.eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0 0 6px;
-}
-
-.dash-top h1 {
-  margin: 0;
-  font-size: 1.6rem;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-}
-
-.btn {
-  border: none;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-weight: 500;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.08);
-  color: inherit;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, #ffd56a, #ff7a5c);
-  color: #161616;
-}
-
-.btn.ghost {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dash-main {
-  padding: 32px;
-  display: grid;
-  gap: 20px;
-}
-
-@media (max-width: 980px) {
-  .dash-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .dash-sidebar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .dash-meta {
-    display: none;
-  }
-
-  .dash-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-}
-
-@media (max-width: 720px) {
-  .dash-sidebar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .actions {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-</style>
