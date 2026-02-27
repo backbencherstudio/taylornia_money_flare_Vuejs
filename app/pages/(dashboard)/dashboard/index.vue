@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Overview from "~/components/DashboardComponenets/Overview/Overview.vue";
+
 definePageMeta({
   layout: "dashboard",
 });
@@ -6,10 +8,6 @@ definePageMeta({
 
 <template>
   <div>
-    This is dashboard
+    <Overview />
   </div>
 </template>
-
-<style scoped>
-
-</style>

@@ -114,7 +114,7 @@ const logout = async () => {
     <!-- Main Content -->
     <main class="flex-1 overflow-auto lg:ml-64">
       <div
-        class="flex justify-between items-center bg-[#08080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0 z-50 "
+        class="flex justify-between items-center bg-[#080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0  z-50  "
       >
         <!-- Mobile Menu Button -->
         <div class="lg:hidden">
@@ -133,11 +133,11 @@ const logout = async () => {
       </div>
 
       <div class="p-4 mt-20 lg:mt-0 fade-in relative overflow-hidden h-screen">
-        <div class="relative z-20">
+        <div class="relative z-10">
           <slot />
         </div>
         <!-- Decoration -->
-        <div class="absolute inset-0 bg-black/5 backdrop-blur-sm z-10"></div>
+        <div class="absolute inset-0 bg-black/5 backdrop-blur-sm z-0"></div>
         <img
           src="/bg-lights.svg"
           alt=""
