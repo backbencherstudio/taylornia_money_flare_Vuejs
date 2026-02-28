@@ -70,7 +70,7 @@ const carouselBreakpoints:any = {
     <div class="mb-10 lg:mb-12.5">
       <SectionHeading title="Our Articles" description="" align="center" />
     </div>
-    <section class="xl:ml-31 2xl:ml-88">
+    <section class="">
       <Carousel
         :items-to-show="1"
         :items-to-scroll="1"
