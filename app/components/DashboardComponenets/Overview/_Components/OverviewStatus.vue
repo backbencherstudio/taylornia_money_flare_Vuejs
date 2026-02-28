@@ -35,18 +35,18 @@ const balanceMetrics: BalanceMetric[] = [
     value: "$70,230",
     change: "+2.5%",
     label: "Portfolio Value",
-    color: "#3C66FF",
+    color: "#375DFB",
   },
   {
     value: "$15,530",
     change: "+2.5%",
     label: "Wallet Balance",
-    color: "#4BC6FF",
+    color: "#35B9E9",
   },
   {
     value: "$4,620",
     label: "Available to Invest",
-    color: "#49E5B8",
+    color: "#38C793",
   },
 ];
 
@@ -178,7 +178,7 @@ const balanceFooterMetrics: BalanceFooterMetric[] = [
           <span
             v-for="metric in balanceMetricsWithProgress"
             :key="`progress-${metric.label}`"
-            class="block h-full rounded-full"
+            class="block h-full rounded-xs"
             :style="{
               flexGrow: metric.progress,
               flexBasis: '0',
