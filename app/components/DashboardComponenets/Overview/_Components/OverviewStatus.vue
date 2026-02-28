@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import CoinIcon from "~/components/Icons/CoinIcon.vue";
 import NetworkIcon from "~/components/Icons/NetworkIcon.vue";
 import PigIcon from "~/components/Icons/PigIcon.vue";
@@ -14,7 +15,6 @@ interface BalanceMetric {
   change?: string;
   label: string;
   color: string;
-  progress: number;
 }
 
 interface BalanceFooterMetric {
@@ -36,22 +36,34 @@ const balanceMetrics: BalanceMetric[] = [
     change: "+2.5%",
     label: "Portfolio Value",
     color: "#3C66FF",
-    progress: 60,
   },
   {
     value: "$15,530",
     change: "+2.5%",
     label: "Wallet Balance",
     color: "#4BC6FF",
-    progress: 24,
   },
   {
     value: "$4,620",
     label: "Available to Invest",
     color: "#49E5B8",
-    progress: 16,
   },
 ];
+
+const parseMetricValue = (value: string) =>
+  Number(value.replace(/[^0-9.-]/g, "")) || 0;
+
+const balanceMetricsWithProgress = computed(() => {
+  const total = balanceMetrics.reduce(
+    (sum, metric) => sum + parseMetricValue(metric.value),
+    0,
+  );
+
+  return balanceMetrics.map((metric) => ({
+    ...metric,
+    progress: total > 0 ? (parseMetricValue(metric.value) / total) * 100 : 0,
+  }));
+});
 
 const balanceFooterMetrics: BalanceFooterMetric[] = [
   {
@@ -164,11 +176,12 @@ const balanceFooterMetrics: BalanceFooterMetric[] = [
 
         <div class="mt-4 flex h-2.5 gap-2">
           <span
-            v-for="metric in balanceMetrics"
+            v-for="metric in balanceMetricsWithProgress"
             :key="`progress-${metric.label}`"
             class="block h-full rounded-full"
             :style="{
-              width: `${metric.progress}%`,
+              flexGrow: metric.progress,
+              flexBasis: '0',
               backgroundColor: metric.color,
             }"
           />
@@ -176,7 +189,7 @@ const balanceFooterMetrics: BalanceFooterMetric[] = [
 
         <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
           <div
-            v-for="metric in balanceMetrics"
+            v-for="metric in balanceMetricsWithProgress"
             :key="metric.label"
             class="space-y-1.5"
           >
