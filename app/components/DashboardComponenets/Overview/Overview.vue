@@ -2,6 +2,7 @@
 import PigIcon from "~/components/Icons/PigIcon.vue";
 import WithdrawIcon from "~/components/Icons/WithdrawIcon.vue";
 import OverviewStatus from "./_Components/OverviewStatus.vue";
+import MarketUpdate from "./_Components/MarketUpdate.vue";
 </script>
 
 <template>
@@ -26,6 +27,9 @@ import OverviewStatus from "./_Components/OverviewStatus.vue";
     </header>
     <div>
         <OverviewStatus/>
+    </div>
+    <div>
+        <MarketUpdate/>
     </div>
   </div>
 </template>

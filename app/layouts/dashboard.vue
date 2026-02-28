@@ -132,7 +132,7 @@ const logout = async () => {
         <div>Here will search</div>
       </div>
 
-      <div class="p-4 mt-20 lg:mt-0 fade-in relative overflow-hidden h-screen">
+      <div class="p-4 mt-20 lg:mt-0 fade-in relative overflow-hidden">
         <div class="relative z-10">
           <slot />
         </div>
