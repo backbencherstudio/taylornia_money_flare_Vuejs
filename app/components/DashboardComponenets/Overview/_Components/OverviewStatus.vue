@@ -11,7 +11,7 @@ interface PortfolioMetric {
 }
 
 interface BalanceMetric {
-  value: string;
+  value: string; 
   change?: string;
   label: string;
   color: string;
