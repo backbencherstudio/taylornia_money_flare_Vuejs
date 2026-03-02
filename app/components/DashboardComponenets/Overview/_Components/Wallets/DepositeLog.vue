@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import ArrowIconUp from "~/components/Icons/ArrowIconUp.vue";
 import PigIcon from "~/components/Icons/PigIcon.vue";
 import SearchIcon from "~/components/Icons/SearchIcon.vue";
+import Wallet1 from "~/components/Icons/Wallet1.vue";
+import Wallet2 from "~/components/Icons/Wallet2.vue";
+import Wallet3 from "~/components/Icons/Wallet3.vue";
 import ReusableTable from "~/components/Reusable/ReusableTable.vue";
 
 type DepositStatus = "Passed" | "Pending";
@@ -59,6 +63,15 @@ const depositRows: DepositRow[] = [
   },
   {
     id: 4,
+    date: "2025-5-06 03:34:02",
+    orderNo: "URDH1746480U24702",
+    amount: "$202.00",
+    payment: "ETH",
+    paymentIcon: "/images/landing/coin.png",
+    status: "Passed",
+  },
+  {
+    id: 5,
     date: "2025-5-06 03:34:02",
     orderNo: "URDH1746480U24702",
     amount: "$202.00",
@@ -169,30 +182,47 @@ const getCellWrapperClass = (row: DepositRow, key: string) => {
 
           <template #empty> No deposit log found. </template>
         </ReusableTable>
-
-        <div class="mt-5 flex items-center justify-between gap-4">
-          <button
-            type="button"
-            class="rounded-full border border-[#232323] px-5 py-2.5 text-[#8A8A8A]"
-          >
-            Previous
-          </button>
-
-          <p class="text-sm lg:text-base text-[#CCCCCC]">Page 1 of 10</p>
-
-          <button
-            type="button"
-            class="rounded-full border border-[#2BFFC3] bg-linear-to-t from-[#1A9975] to-[#2BFFC3] px-7 py-2.5 text-black"
-          >
-            Next
-          </button>
-        </div>
       </div>
     </div>
     <div
-      class="lg:col-span-4 primary-border bg-[#080808]/95 p-4 lg:p-5 rounded-[10px]"
+      class="lg:col-span-4 primary-border bg-[#080808]/95 p-4 lg:p-5 rounded-[10px] space-y-4 h-fit "
     >
-      <div></div>
+      <div class="primary-border p-3 rounded-lg">
+        <button class="primary-border p-4 rounded-full">
+          <Wallet1 />
+        </button>
+        <div class="mt-4">
+          <p class="text-sm text-secondary">Trial funds</p>
+          <div class="flex justify-between items-center mt-2.5">
+            <p>$2201.99</p>
+            <p class="flex items-center gap-0.75 text-[#83B047]"><span><ArrowIconUp /></span>25%</p>
+          </div>
+        </div>
+      </div>
+      <div class="primary-border p-3 rounded-lg">
+        <button class="primary-border p-4 rounded-full">
+          <Wallet2 />
+        </button>
+        <div class="mt-4">
+          <p class="text-sm text-secondary">Trial funds</p>
+          <div class="flex justify-between items-center mt-2.5">
+            <p>$2201.99</p>
+            <p class="flex items-center gap-0.75 text-red-500"><span class="scale-y-[-1]"><ArrowIconUp /></span>25%</p>
+          </div>
+        </div>
+      </div>
+      <div class="primary-border p-3 rounded-lg">
+        <button class="primary-border p-4 rounded-full">
+          <Wallet3 />
+        </button>
+        <div class="mt-4">
+          <p class="text-sm text-secondary">Trial funds</p>
+          <div class="flex justify-between items-center mt-2.5">
+            <p>$2201.99</p>
+            <p class="flex items-center gap-0.75 text-sm text-[#83B047]"><span><ArrowIconUp /></span>25%</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
