@@ -20,7 +20,7 @@ import DepositeLog from "./DepositeLog.vue";
             <input
               placeholder="Enter your Amount"
               type="text"
-              class="w-full primary-border text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
+              class="w-full border border-[#222222] text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
             />
           </div>
           <div>
@@ -30,7 +30,7 @@ import DepositeLog from "./DepositeLog.vue";
             <input
               placeholder="Enter your Amount"
               type="text"
-              class="w-full primary-border text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
+              class="w-full border border-[#222222] text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
             />
           </div>
           <BaseButtonLink type="submit" class="w-full">
