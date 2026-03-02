@@ -100,7 +100,7 @@ const handleTradeClick = (row: MarketRow) => {
 </script>
 
 <template>
-  <section class="mt-5 rounded-[10px] border border-[#222222] bg-black p-6">
+  <section class="mt-5 rounded-[10px] primary-border bg-black p-6">
     <ReusableTable :columns="columns" :data="marketRows" row-key="id">
       <template #cell-favorite="{ row }">
         <span class="flex h-5 w-5 items-center justify-center">

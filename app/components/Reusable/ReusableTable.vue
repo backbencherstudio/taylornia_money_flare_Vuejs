@@ -33,7 +33,7 @@ const displayValue = (value: unknown) => {
 </script>
 
 <template>
-  <div class="overflow-x-auto rounded-lg border border-white/20">
+  <div class="overflow-x-auto rounded-lg primary-border">
     <table class="w-full min-w-245 border-separate border-spacing-0">
       <thead class="bg-[#1e1e1e]">
         <tr class="text-white">

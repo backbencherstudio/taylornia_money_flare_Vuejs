@@ -8,9 +8,9 @@ import BaseButtonLink from "~/components/Reusable/BaseButtonLink.vue";
 <template>
   <div class="mt-6 grid grid-cols-2 gap-3">
     <div
-      class="border border-[#222222] bg-[#080808]/95 p-4 lg:p-5 rounded-[10px]"
+      class="primary-border bg-[#080808]/95 p-4 lg:p-5 rounded-[10px]"
     >
-      <p class="text-[#CCC] font-dm tracking-[-0.75px]">Deposit Funds</p>
+      <p class="text-secondary font-dm tracking-[-0.75px]">Deposit Funds</p>
 
       <form class="mt-5 space-y-4">
         <div>
@@ -20,7 +20,7 @@ import BaseButtonLink from "~/components/Reusable/BaseButtonLink.vue";
           <input
             placeholder="Enter your Amount"
             type="text"
-            class="w-full border border-[#222222] text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
+            class="w-full primary-border text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
           />
         </div>
         <div>
@@ -30,59 +30,59 @@ import BaseButtonLink from "~/components/Reusable/BaseButtonLink.vue";
           <input
             placeholder="Enter your Amount"
             type="text"
-            class="w-full border border-[#222222] text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
+            class="w-full primary-border text-xs py-3 px-3.75 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
           />
         </div>
         <BaseButtonLink type="submit" class="w-full"> Deposite </BaseButtonLink>
       </form>
     </div>
     <div
-      class="border border-[#222222] bg-[#080808]/95 p-4 lg:p-5 rounded-[10px]"
+      class="primary-border bg-[#080808]/95 p-4 lg:p-5 rounded-[10px]"
     >
       <div class="flex justify-between items-center">
-        <p class="text-[#CCC] font-dm tracking-[-0.75px]">Deposit Funds</p>
-        <button class="text-xs text-[#CCC]">See all</button>
+        <p class="text-secondary font-dm tracking-[-0.75px]">Deposit Funds</p>
+        <button class="text-xs text-secondary">See all</button>
       </div>
 
       <div>
         <div
-          class="border border-[#222222] p-3 mt-4 rounded-lg flex items-center justify-between gap-3"
+          class="primary-border p-3 mt-4 rounded-lg flex items-center justify-between gap-3"
         >
           <div class="flex items-center gap-2">
             <button
-              class="p-3 border border-[#222222] bg-[#0F0B08] rounded-full"
+              class="p-3 primary-border bg-[#0F0B08] rounded-full"
             >
               <Wallet1 />
             </button>
             <p class="text-sm">Profit</p>
           </div>
-          <p class="text-[10px] text-[#CCC]">$25315.00</p>
+          <p class="text-[10px] text-secondary">$25315.00</p>
         </div>
         <div
-          class="border border-[#222222] p-3 mt-4 rounded-lg flex items-center justify-between gap-3"
+          class="primary-border p-3 mt-4 rounded-lg flex items-center justify-between gap-3"
         >
           <div class="flex items-center gap-2">
             <button
-              class="p-3 border border-[#222222] bg-[#0F0B08] rounded-full"
+              class="p-3 primary-border bg-[#0F0B08] rounded-full"
             >
               <Wallet2 />
             </button>
             <p class="text-sm">Withdraw</p>
           </div>
-          <p class="text-[10px] text-[#CCC]">$20,500.00</p>
+          <p class="text-[10px] text-secondary">$20,500.00</p>
         </div>
         <div
-          class="border border-[#222222] p-3 mt-4 rounded-lg flex items-center justify-between gap-3"
+          class="primary-border p-3 mt-4 rounded-lg flex items-center justify-between gap-3"
         >
           <div class="flex items-center gap-2">
             <button
-              class="p-3 border border-[#222222] bg-[#0F0B08] rounded-full"
+              class="p-3 primary-border bg-[#0F0B08] rounded-full"
             >
               <Wallet3 />
             </button>
             <p class="text-sm">Invest</p>
           </div>
-          <p class="text-[10px] text-[#CCC]">$15,800.00</p>
+          <p class="text-[10px] text-secondary">$15,800.00</p>
         </div>
       </div>
     </div>

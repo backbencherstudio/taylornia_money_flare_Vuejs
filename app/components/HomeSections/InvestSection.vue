@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
       <div class="grid lg:grid-cols-2 gap-5 lg:gap-6 mt-10 lg:mt-12.5">
         <div class="space-y-5 lg:space-y-6">
           <div
-            class="bg-[#080808CC] px-8 py-5.5 backdrop-blur border border-[#222222] rounded-3xl"
+            class="bg-[#080808CC] px-8 py-5.5 backdrop-blur primary-border rounded-3xl"
           >
             <div class="mb-7">
               <h2
@@ -129,14 +129,14 @@ onBeforeUnmount(() => {
                 Transactions automation
               </h2>
               <p
-                class="text-xs lg:text-sm text-[#CCC] leading-[137%] lg:w-[45ch]"
+                class="text-xs lg:text-sm text-secondary leading-[137%] lg:w-[45ch]"
               >
                 Put all your crypto transfers on auto-pilot. Make it easy and
                 effortless to track all your investments.
               </p>
             </div>
             <div
-              class="flex justify-between items-center text-sm text-[#CCC] leading-[137%]"
+              class="flex justify-between items-center text-sm text-secondary leading-[137%]"
             >
               <p>Latest transactions</p>
               <button
@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
           </div>
 
           <div
-            class="bg-[#080808CC] px-6 py-3 backdrop-blur-2xl border border-[#222222] rounded-3xl h-fit flex items-center gap-6"
+            class="bg-[#080808CC] px-6 py-3 backdrop-blur-2xl primary-border rounded-3xl h-fit flex items-center gap-6"
           >
             <div>
               <img src="/images/landing/invest2.png" alt="" class="w-37" />
@@ -176,7 +176,7 @@ onBeforeUnmount(() => {
                 Investments analytics
               </h2>
               <p
-                class="text-xs lg:text-sm text-[#CCC] leading-[137%] lg:w-[35ch]"
+                class="text-xs lg:text-sm text-secondary leading-[137%] lg:w-[35ch]"
               >
                 Review all your transactions and track the payments history in
                 one tailored hub.
@@ -188,7 +188,7 @@ onBeforeUnmount(() => {
           class="flex flex-col-reverse lg:flex-col justify-stretch gap-5 lg:gap-6"
         >
           <div
-            class="bg-[#080808CC] px-6 py-3 backdrop-blur-2xl border border-[#222222] rounded-3xl h-fit flex items-center gap-6"
+            class="bg-[#080808CC] px-6 py-3 backdrop-blur-2xl primary-border rounded-3xl h-fit flex items-center gap-6"
           >
             <div>
               <img src="/images/landing/invest.png" alt="" class="w-37" />
@@ -200,22 +200,22 @@ onBeforeUnmount(() => {
                 All-in-one integrations
               </h2>
               <p
-                class="text-xs lg:text-sm text-[#CCC] leading-[137%] lg:w-[30ch]"
+                class="text-xs lg:text-sm text-secondary leading-[137%] lg:w-[30ch]"
               >
                 Connect to 70+ enterprise payment systems just in one click.
               </p>
             </div>
           </div>
           <div
-            class="bg-[#080808CC] px-6 py-5 backdrop-blur-2xl border border-[#222222] rounded-3xl h-fit"
+            class="bg-[#080808CC] px-6 py-5 backdrop-blur-2xl primary-border rounded-3xl h-fit"
           >
             <div>
               <!-- Header -->
               <div>
                 <div class="flex justify-between items-center">
-                  <p class="text-base text-[#CCC]">Performance</p>
+                  <p class="text-base text-secondary">Performance</p>
 
-                  <div class="flex items-center gap-2.5 text-sm text-[#CCC]">
+                  <div class="flex items-center gap-2.5 text-sm text-secondary">
                     <button
                       v-for="range in ranges"
                       :key="range"
@@ -260,7 +260,7 @@ onBeforeUnmount(() => {
                 Keep your portfolio on track
               </h2>
               <p
-                class="text-xs lg:text-sm text-[#CCC] leading-[137%] lg:w-[50ch]"
+                class="text-xs lg:text-sm text-secondary leading-[137%] lg:w-[50ch]"
               >
                 Set up your investment goals and track the efficiency throughout
                 the defined period of time, make sure you are on track.

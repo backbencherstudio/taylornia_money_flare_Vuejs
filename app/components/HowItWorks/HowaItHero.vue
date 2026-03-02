@@ -14,7 +14,7 @@
         >
           Intelligent Trading, Fully Automated
         </p>
-        <div class="max-w-221.25 mx-auto text-center mt-3.5 text-[#CCC]">
+        <div class="max-w-221.25 mx-auto text-center mt-3.5 text-secondary">
           <p class="lg:text-[1.125rem] leading-[140%] tracking-[0.18px]">
             MoneyFlare is built to make advanced cryptocurrency quantitative
             trading accessible without requiring technical knowledge or active

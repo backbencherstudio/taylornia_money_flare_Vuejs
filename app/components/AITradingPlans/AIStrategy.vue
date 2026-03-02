@@ -12,7 +12,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
           align="left"
           titleWidth="md:w-[10ch]"
         />
-        <div class="space-y-3 text-[#CCC]">
+        <div class="space-y-3 text-secondary">
           <p>
             MoneyFlare offers multiple AI-driven quantitative trading frameworks
             designed to operate under different market conditions and risk

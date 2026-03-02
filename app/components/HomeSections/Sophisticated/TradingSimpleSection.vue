@@ -23,7 +23,7 @@ import SectionHeading from "~/components/Reusable/SectionHeading.vue";
           <h1 class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]">
             Full Automation
           </h1>
-          <p class="text-center mb-7.5 text-[#CCC]">
+          <p class="text-center mb-7.5 text-secondary">
             Let advanced AI systems manage the entire trading process for you.
             MoneyFlare operates continuously, analyzing market conditions.
           </p>
@@ -45,7 +45,7 @@ import SectionHeading from "~/components/Reusable/SectionHeading.vue";
           <h1 class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]">
             Intelligent Models
           </h1>
-          <p class="text-center mb-7.5 text-[#CCC]">
+          <p class="text-center mb-7.5 text-secondary">
             Our quantitative models are built using advanced data analysis,
             machine learning, and market behavior signals.
           </p>
@@ -66,7 +66,7 @@ import SectionHeading from "~/components/Reusable/SectionHeading.vue";
           <h1 class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]">
             Secure Infrastructure
           </h1>
-          <p class="text-center mb-7.5 text-[#CCC]">
+          <p class="text-center mb-7.5 text-secondary">
             Your assets remain under your control through secure, API-based
             connections. MoneyFlare never takes custody of your funds,
             ensuring.

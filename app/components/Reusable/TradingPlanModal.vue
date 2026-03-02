@@ -238,7 +238,7 @@ onBeforeUnmount(() => {
                   <h2 class="text-[2rem] font-dm leading-[110%]">
                     {{ props.heading }}
                   </h2>
-                  <p class="text-base text-[#CCC] mt-2">
+                  <p class="text-base text-secondary mt-2">
                     {{ props.subtitle }}
                   </p>
                 </div>
@@ -255,7 +255,7 @@ onBeforeUnmount(() => {
                   <div
                     class="rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                   >
-                    <p class="text-[13px] tracking-wide text-[#CCC] uppercase">
+                    <p class="text-[13px] tracking-wide text-secondary uppercase">
                       Plan Duration
                     </p>
                     <p
@@ -267,7 +267,7 @@ onBeforeUnmount(() => {
                   <div
                     class="rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                   >
-                    <p class="text-xs lg:text-[13px] text-[#CCC] uppercase">
+                    <p class="text-xs lg:text-[13px] text-secondary uppercase">
                       Daily Profit
                     </p>
                     <p
@@ -279,7 +279,7 @@ onBeforeUnmount(() => {
                   <div
                     class="rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                   >
-                    <p class="text-xs lg:text-[13px] text-[#CCC] uppercase">
+                    <p class="text-xs lg:text-[13px] text-secondary uppercase">
                       Total Net Profit
                     </p>
                     <p
@@ -291,7 +291,7 @@ onBeforeUnmount(() => {
                   <div
                     class="rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                   >
-                    <p class="text-xs lg:text-[13px] text-[#CCC] uppercase">
+                    <p class="text-xs lg:text-[13px] text-secondary uppercase">
                       Level 1 Referral
                     </p>
                     <p
@@ -303,7 +303,7 @@ onBeforeUnmount(() => {
                   <div
                     class="rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                   >
-                    <p class="text-xs lg:text-[13px] text-[#CCC] uppercase">
+                    <p class="text-xs lg:text-[13px] text-secondary uppercase">
                       Level 2 Referral
                     </p>
                     <p
@@ -315,7 +315,7 @@ onBeforeUnmount(() => {
                   <div
                     class="rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                   >
-                    <p class="text-xs lg:text-[13px] text-[#CCC] uppercase">
+                    <p class="text-xs lg:text-[13px] text-secondary uppercase">
                       Profit Payout
                     </p>
                     <p
@@ -328,7 +328,7 @@ onBeforeUnmount(() => {
                 <div
                   class="mt-4 rounded-2xl border border-white/10 bg-[#070707] p-4 sm:p-5"
                 >
-                  <p class="text-xs lg:text-[13px] text-[#CCC] uppercase">
+                  <p class="text-xs lg:text-[13px] text-secondary uppercase">
                     Principal Refund
                   </p>
                   <p
@@ -436,7 +436,7 @@ onBeforeUnmount(() => {
           >
             <div
               v-if="showDetails"
-              class="p-7.5 space-x-7.5 lg:space-y-10 border border-[#222222] rounded-[20px] mt-15 lg:mt-20"
+              class="p-7.5 space-x-7.5 lg:space-y-10 primary-border rounded-[20px] mt-15 lg:mt-20"
             >
               <div
                 v-for="instruction in resolvedInstructions"
@@ -447,7 +447,7 @@ onBeforeUnmount(() => {
                 >
                   {{ instruction.title }}
                 </h4>
-                <p class="text-[#CCC] text-sm leading-[160%]">
+                <p class="text-secondary text-sm leading-[160%]">
                   {{ instruction.description }}
                 </p>
               </div>

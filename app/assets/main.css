@@ -44,8 +44,14 @@ body{
 .text-primary{
   color: #2BFFC3;
 }
+.text-secondary{
+  color: #CCC;
+}
 .border-primary{
   color: #2BFFC3;
+}
+.primary-border{
+  @apply border border-[#222222]
 }
 button{
   cursor: pointer;

@@ -60,7 +60,7 @@ const visionCards = [
               >
                 {{ card.title }}
               </h1>
-              <p class="text-center text-[#CCC]">
+              <p class="text-center text-secondary">
                 {{ card.description }}
               </p>
             </div>
@@ -82,7 +82,7 @@ const visionCards = [
           <h1 class="text-[22px] sm:text-[1.75rem] text-center mb-5 leading-[107%]">
             {{ card.title }}
           </h1>
-          <p class="text-center text-[#CCC]">
+          <p class="text-center text-secondary">
             {{ card.description }}
           </p>
         </div>

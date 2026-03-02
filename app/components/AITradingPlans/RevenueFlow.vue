@@ -10,7 +10,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
         <div class="mb-6">
           <SectionHeading title="How the Plans Differ" align="left" />
         </div>
-        <div class="text-[#CCC] leading-[160%] text-base space-y-4">
+        <div class="text-secondary leading-[160%] text-base space-y-4">
           <p>
             AI Trading Plans are differentiated by their underlying quantitative
             models, market behavior focus, and risk control parameters. Some
@@ -29,7 +29,7 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
         </div>
       </div>
       <div>
-        <img src="/images/aitrading/flow.png" alt="" class="border border-[#222222] pb-6 rounded-2xl">
+        <img src="/images/aitrading/flow.png" alt="" class="primary-border pb-6 rounded-2xl">
       </div>
     </div>
   </section>

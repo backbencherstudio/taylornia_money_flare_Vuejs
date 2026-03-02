@@ -30,7 +30,7 @@ const marqueeImages = [
             AI‑Driven Crypto Trading. Truly Automated. Truly Smart.
           </h1>
           <p
-            class="text-[3.7vw] sm:text-lg text-[#CCC] leading-[140%] text-center"
+            class="text-[3.7vw] sm:text-lg text-secondary leading-[140%] text-center"
           >
             MoneyFlare uses advanced AI and professional quantitative systems to
             automate your crypto trading — no expertise needed.
@@ -42,7 +42,7 @@ const marqueeImages = [
           >
         </div>
         <div class="mt-15 xl:mt-20">
-          <p class="text-sm text-[#ccc] leading-[160%] text-center mb-4">
+          <p class="text-sm text-secondary leading-[160%] text-center mb-4">
             Support top 30+ chains
           </p>
         </div>

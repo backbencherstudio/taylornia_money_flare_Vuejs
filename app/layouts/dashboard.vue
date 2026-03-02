@@ -134,7 +134,7 @@ const logout = async () => {
           <input
             placeholder="search"
             type="text"
-            class="w-full border border-[#222222] text-xs py-2.5 pl-8 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
+            class="w-full primary-border text-xs py-2.5 pl-8 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
           />
           <button class="absolute top-1/2 -translate-y-1/2 left-3">
             <SearchIcon />

@@ -119,7 +119,7 @@ const rowCellClass = (row: MarketRow, index: number) => {
     <!-- decoration -->
     <div class="mx-auto max-w-7xl px-6 xl:px-10  relative z-30">
       <div
-        class="rounded-[30px] border border-[#222222] bg-[#050505] p-6 sm:p-8 lg:p-10 xl:p-12"
+        class="rounded-[30px] primary-border bg-[#050505] p-6 sm:p-8 lg:p-10 xl:p-12"
       >
         <SectionHeading title="Market Update" align="left" />
         <div class="mt-6 border-t border-[#1A1A1A]" />

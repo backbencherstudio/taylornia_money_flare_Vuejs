@@ -61,7 +61,7 @@ const features = [
         <div
           v-for="(feature, index) in features"
           :key="feature.title"
-          class="bg-[#080808] border border-[#222222] rounded-xl p-6 lg:col-span-2"
+          class="bg-[#080808] primary-border rounded-xl p-6 lg:col-span-2"
           :class="{ 'lg:col-span-3': index > 2 }"
         >
           <div
@@ -71,7 +71,7 @@ const features = [
           </div>
           <div class="mt-8">
             <h2 class="text-xl font-semibold">{{ feature.title }}</h2>
-            <p class="text-sm text-[#CCC] leading-[160%]">
+            <p class="text-sm text-secondary leading-[160%]">
               {{ feature.description }}
             </p>
           </div>

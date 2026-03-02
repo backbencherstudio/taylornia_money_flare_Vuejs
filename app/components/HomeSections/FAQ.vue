@@ -54,7 +54,7 @@ const faqs = [
 
         <div class="max-w-230 mx-auto px-4 sm:px-6 lg:px-8 mt-10 space-y-4">
             <div v-for="(faq, index) in faqs" :key="index"
-                class="border border-[#222222] rounded-2xl overflow-hidden transition-all duration-300">
+                class="primary-border rounded-2xl overflow-hidden transition-all duration-300">
                 <!-- Button -->
                 <button @click="toggleAccordion(index)"
                     class="w-full flex justify-between items-center gap-4 p-5 sm:p-6 text-left">

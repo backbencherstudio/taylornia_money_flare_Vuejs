@@ -83,7 +83,7 @@ const balanceFooterMetrics: BalanceFooterMetric[] = [
 <template>
   <section class="mt-6 grid grid-cols-1 gap-4 xl:grid-cols-12">
     <article
-      class="relative overflow-hidden rounded-xl border border-[#222222] bg-[#080808]/95 p-4 lg:p-5 xl:col-span-4"
+      class="relative overflow-hidden rounded-xl primary-border bg-[#080808]/95 p-4 lg:p-5 xl:col-span-4"
     >
       <div
         class="pointer-events-none absolute -top-10 -left-12 h-28 w-28 rounded-full bg-[#0b7e61]/35 blur-3xl"
@@ -140,7 +140,7 @@ const balanceFooterMetrics: BalanceFooterMetric[] = [
     </article>
 
     <article
-      class="relative overflow-hidden rounded-xl border border-[#222222] bg-[#080808]/95 p-4 lg:p-5 xl:col-span-8"
+      class="relative overflow-hidden rounded-xl primary-border bg-[#080808]/95 p-4 lg:p-5 xl:col-span-8"
     >
       <div
         class="pointer-events-none absolute top-0 left-24 h-20 w-64 bg-[#2f65ff1f] blur-2xl"
@@ -160,7 +160,7 @@ const balanceFooterMetrics: BalanceFooterMetric[] = [
           <div class="flex items-center gap-2">
             <button
               type="button"
-              class="inline-flex items-center gap-2 rounded-full border border-[#222222] px-3 py-1.5 text-xs text-[#EAEAEA] hover:bg-[#111111]"
+              class="inline-flex items-center gap-2 rounded-full primary-border px-3 py-1.5 text-xs text-[#EAEAEA] hover:bg-[#111111]"
             >
               <NetworkIcon />
               More Insights

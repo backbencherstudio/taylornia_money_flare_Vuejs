@@ -50,14 +50,14 @@ const features = [
                 align="center" titleWidth="lg:w-[18ch]" descriptionWidth="xl:w-[65ch]" />
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 xl:mt-12.5">
-            <div v-for="feature in features" :key="feature.title" class="border border-[#222222] rounded-xl p-6">
+            <div v-for="feature in features" :key="feature.title" class="primary-border rounded-xl p-6">
                 <div
                     class="w-11 h-11 bg-linear-to-b to-[#1A9975] from-[#2BFFC3] rounded-xl flex items-center justify-center">
                     <component :is="feature.icon" />
                 </div>
                 <div class="mt-8">
                     <h2 class="text-xl font-semibold">{{ feature.title }}</h2>
-                    <p class="text-sm text-[#CCC] leading-[160%]">{{ feature.description }}</p>
+                    <p class="text-sm text-secondary leading-[160%]">{{ feature.description }}</p>
                 </div>
             </div>
         </div>

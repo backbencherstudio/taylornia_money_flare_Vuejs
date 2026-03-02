@@ -137,14 +137,14 @@ const handleBuyPlan = () => {
 
 <template>
   <div
-    class="border border-[#222222] bg-[#080808]/95 p-4 lg:p-5 rounded-[10px] mt-6"
+    class="primary-border bg-[#080808]/95 p-4 lg:p-5 rounded-[10px] mt-6"
   >
     <header class="flex justify-between items-center gap-2">
       <div class="flex gap-2 items-center">
-        <button class="p-2 border border-[#222222] rounded-lg">
+        <button class="p-2 primary-border rounded-lg">
           <StatsIcon2 />
         </button>
-        <p class="text-[#CCC] font-dm">AI quant trading investment plans</p>
+        <p class="text-secondary font-dm">AI quant trading investment plans</p>
       </div>
       <div>
         <button
@@ -160,7 +160,7 @@ const handleBuyPlan = () => {
         <div
           v-for="plan in plans"
           :key="plan.name"
-          class="bg-[#080808] border border-[#222222] rounded-2xl p-7 flex flex-col lg:flex-row gap-7.5"
+          class="bg-[#080808] primary-border rounded-2xl p-7 flex flex-col lg:flex-row gap-7.5"
         >
           <div class="lg:w-1/2">
             <img src="/plan-image2.png" alt="" />
@@ -169,7 +169,7 @@ const handleBuyPlan = () => {
             >
               {{ plan.name }}
             </p>
-            <p class="text-xs text-[#CCC] leading-[213%] text-center">
+            <p class="text-xs text-secondary leading-[213%] text-center">
               24-Hour Profit Payout
             </p>
           </div>
@@ -179,7 +179,7 @@ const handleBuyPlan = () => {
               <h2 class="text-[22px] font-semibold leading-[136%]">
                 {{ formatCompactCurrency(plan.price) }}
               </h2>
-              <p class="text-xs text-[#CCC]">
+              <p class="text-xs text-secondary">
                 {{ plan.duration }} Days Duration
               </p>
             </div>
@@ -192,7 +192,7 @@ const handleBuyPlan = () => {
                 >
                   Daily Profit
                 </p>
-                <p class="text-sm text-[#CCC]">
+                <p class="text-sm text-secondary">
                   {{ formatCurrency(plan.dailyProfit) }}
                 </p>
               </div>
@@ -204,7 +204,7 @@ const handleBuyPlan = () => {
                 >
                   Total Net Profit
                 </p>
-                <p class="text-sm text-[#CCC]">
+                <p class="text-sm text-secondary">
                   {{ formatCurrency(plan.totalNetProfit) }}
                 </p>
               </div>
@@ -216,7 +216,7 @@ const handleBuyPlan = () => {
                 >
                   Referral Reward
                 </p>
-                <p class="text-sm text-[#CCC]">
+                <p class="text-sm text-secondary">
                   {{ formatCurrency(plan.referralReward) }}
                 </p>
               </div>
@@ -228,7 +228,7 @@ const handleBuyPlan = () => {
                 >
                   Principal Refund
                 </p>
-                <p class="text-sm text-[#CCC]">
+                <p class="text-sm text-secondary">
                   {{ plan.principalRefund ? "Yes" : "No" }}
                 </p>
               </div>
