@@ -21,7 +21,7 @@ const router = useRouter();
 /* Menu Items */
 const menuItems = [
   { href: "/dashboard", icon: DashIcon, label: "Dashboard" },
-  { href: "/dashboard/start-mining", icon: DashIcon2, label: "Plans" },
+  { href: "/dashboard/plans", icon: DashIcon2, label: "Plans" },
   { href: "/dashboard/wallets", icon: DashIcon3, label: "Wallets" },
   { href: "/dashboard/orders", icon: DashIcon4, label: "Orders" },
   { href: "/dashboard/profit", icon: DashIcon5, label: "Profit" },
