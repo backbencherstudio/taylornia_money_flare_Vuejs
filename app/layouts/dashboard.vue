@@ -30,7 +30,7 @@ const menuItems = [
     icon: DashIcon6,
     label: "Referral Rewards",
   },
-  { href: "/dashboard/settings", icon: DashIcon7, label: "Settings" },
+  // { href: "/dashboard/settings", icon: DashIcon7, label: "Settings" },
 ];
 
 const isActive = (href) => {
