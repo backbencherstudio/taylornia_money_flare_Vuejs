@@ -8,6 +8,7 @@ import DashIcon4 from "~/components/Icons/DashIcon4.vue";
 import DashIcon5 from "~/components/Icons/DashIcon5.vue";
 import DashIcon6 from "~/components/Icons/DashIcon6.vue";
 import DashIcon7 from "~/components/Icons/DashIcon7.vue";
+import SearchIcon from "~/components/Icons/SearchIcon.vue";
 
 const sidebarOpen = ref(false);
 const toggleSidebar = () => {
@@ -114,22 +115,31 @@ const logout = async () => {
     <!-- Main Content -->
     <main class="flex-1 overflow-auto lg:ml-64">
       <div
-        class="flex justify-between items-center bg-[#080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0  z-50  "
+        class="flex justify-between items-center bg-[#080808] p-6 border-b border-[#222222] fixed lg:static top-0 left-0 right-0 z-50"
       >
         <!-- Mobile Menu Button -->
         <div class="lg:hidden">
-          <button @click="toggleSidebar">
-            Menu
-          </button>
+          <button @click="toggleSidebar">Menu</button>
         </div>
-        <div class="absolute bg-[#00ffb7] h-20 w-80 -top-20 left-[70%] blur-[100px] opacity-[0.4]" />
+        <div
+          class="absolute bg-[#00ffb7] h-20 w-80 -top-20 left-[70%] blur-[100px] opacity-[0.4]"
+        />
 
         <!-- Page Title -->
         <h1 class="hidden lg:block text-xl font-semibold text-white w-fit">
           {{ pageTitle }}
         </h1>
 
-        <div>Here will search</div>
+        <div class="max-w-77.25 relative">
+          <input
+            placeholder="search"
+            type="text"
+            class="w-full border border-[#222222] text-xs py-2.5 pl-8 rounded-lg focus:outline-none focus:border-[#28f0b8] duration-500 ease-in-out"
+          />
+          <button class="absolute top-1/2 -translate-y-1/2 left-3">
+            <SearchIcon />
+          </button>
+        </div>
       </div>
 
       <div class="p-4 mt-20 lg:mt-0 fade-in relative overflow-hidden">
