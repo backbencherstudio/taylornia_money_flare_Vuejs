@@ -4,6 +4,7 @@ import FAQ from "~/components/HomeSections/FAQ.vue";
 import HeroSection from "~/components/HomeSections/HeroSection.vue";
 import InvestSection from "~/components/HomeSections/InvestSection.vue";
 import OurArticles from "~/components/HomeSections/OurArticles.vue";
+import OurPlan from "~/components/HomeSections/OurPlan.vue";
 import PowerfulFeatures from "~/components/HomeSections/PowerfulFeatures.vue";
 import SophisticatedAI from "~/components/HomeSections/Sophisticated/SophisticatedAI.vue";
 import MarketUpdate from "~/components/MarketUpdate/MarketUpdate.vue";
@@ -20,6 +21,7 @@ definePageMeta({
     <EasySteps />
     <PowerfulFeatures />
     <InvestSection />
+    <OurPlan/>
     <MarketUpdate/>
     <OurArticles />
     <FAQ />
