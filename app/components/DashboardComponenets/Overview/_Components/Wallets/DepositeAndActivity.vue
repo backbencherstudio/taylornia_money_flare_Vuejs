@@ -6,7 +6,7 @@ import BaseButtonLink from "~/components/Reusable/BaseButtonLink.vue";
 </script>
 
 <template>
-  <div class="mt-6 grid grid-cols-2 gap-3">
+  <div class="mt-6 grid md:grid-cols-2 gap-3">
     <div
       class="primary-border bg-[#080808]/95 p-4 lg:p-5 rounded-[10px]"
     >
