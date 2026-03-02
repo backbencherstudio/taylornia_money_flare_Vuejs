@@ -6,11 +6,33 @@ import DepositeAndActivity from "./DepositeAndActivity.vue";
 import WithdrawAndActivity from "./WithdrawAndActivity.vue";
 
 type TabType = "deposit" | "withdraw";
-const activeTab = ref<TabType>("deposit");
+
+const route = useRoute();
+const router = useRouter();
+
+const activeTab = ref<TabType>(
+  route.query.tab === "withdraw" ? "withdraw" : "deposit"
+);
 
 const setTab = (tab: TabType) => {
   activeTab.value = tab;
+
+  router.replace({
+    query: {
+      ...route.query,
+      tab,
+    },
+  });
 };
+
+watch(
+  () => route.query.tab,
+  (newTab) => {
+    if (newTab === "withdraw" || newTab === "deposit") {
+      activeTab.value = newTab;
+    }
+  }
+);
 </script>
 
 <template>
