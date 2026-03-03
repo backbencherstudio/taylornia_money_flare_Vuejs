@@ -8,6 +8,7 @@ import DashIcon4 from "~/components/Icons/DashIcon4.vue";
 import DashIcon5 from "~/components/Icons/DashIcon5.vue";
 import DashIcon6 from "~/components/Icons/DashIcon6.vue";
 import DashIcon7 from "~/components/Icons/DashIcon7.vue";
+import Menu from "~/components/Icons/Menu.vue";
 import SearchIcon from "~/components/Icons/SearchIcon.vue";
 
 const sidebarOpen = ref(false);
@@ -81,7 +82,7 @@ const logout = async () => {
           </NuxtLink>
         </div>
 
-        <nav class="mt-4 space-y-3 px-6 relative">
+        <nav class="mt-4 space-y-3 px-6 relative z-50">
           <NuxtLink
             v-for="menuItem in menuItems"
             :key="menuItem.href"
@@ -119,7 +120,9 @@ const logout = async () => {
       >
         <!-- Mobile Menu Button -->
         <div class="lg:hidden">
-          <button @click="toggleSidebar">Menu</button>
+          <button @click="toggleSidebar">
+            <Menu />
+          </button>
         </div>
         <div
           class="absolute bg-[#00ffb7] h-20 w-80 -top-20 left-[70%] blur-[100px] opacity-[0.4]"
