@@ -33,7 +33,7 @@ import TrophyIcon from "~/components/Icons/TrophyIcon.vue";
                 <ReferralIcon/>
                 <div>
                     <p class="text-xs text-secondary">Email</p>
-                    <p>dccwdc@gmail.com</p>
+                    <p class="text-sm lg:text-base">dccwdc@gmail.com</p>
                 </div>
             </div>
             <div class="text-[10px] space-y-2">

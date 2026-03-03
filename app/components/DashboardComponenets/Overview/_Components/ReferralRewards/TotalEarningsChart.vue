@@ -31,7 +31,7 @@ const chartOptions: ApexOptions = {
   },
   colors: ["#ff392b"],
   stroke: {
-    width: 3,
+    width: 1,
     curve: "smooth",
     lineCap: "round",
   },
