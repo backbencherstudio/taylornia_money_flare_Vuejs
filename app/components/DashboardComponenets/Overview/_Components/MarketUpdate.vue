@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import FilterIcon from "~/components/Icons/FilterIcon.vue";
+import ThreeDot from "~/components/Icons/ThreeDot.vue";
+import TrophyIcon from "~/components/Icons/TrophyIcon.vue";
 import ReusableTable from "~/components/Reusable/ReusableTable.vue";
 
 interface MarketRow {
@@ -91,16 +94,36 @@ const columns = [
   { label: "Market Cap", key: "marketCap" },
   { label: "24h %", key: "change" },
   { label: "Last 7 Days", key: "chart" },
-  { label: "Action", key: "action" },
 ];
 
-const handleTradeClick = (row: MarketRow) => {
-  emit("trade-click", row);
-};
 </script>
 
 <template>
   <section class="mt-5 rounded-[10px] primary-border bg-black p-6">
+    <header
+      class="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center mb-6"
+    >
+      <div class="flex items-center gap-2">
+        <button class="p-2.5 primary-border rounded-lg">
+          <TrophyIcon />
+        </button>
+        <p class="text-secondary font-dm tracking-[-0.75px]">Market Update</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button
+          class="flex items-center gap-3 primary-border px-4 py-2 rounded-full hover:bg-[#111111] duration-300"
+        >
+        <FilterIcon/>
+          Filter
+        </button>
+        <button
+          type="button"
+          class="flex h-10 w-10 flex-col items-center justify-center gap-0.75 rounded-full primary-border text-[#7B7B7B] hover:bg-[#111111] duration-300"
+        >
+          <ThreeDot />
+        </button>
+      </div>
+    </header>
     <ReusableTable :columns="columns" :data="marketRows" row-key="id">
       <template #cell-favorite="{ row }">
         <span class="flex h-5 w-5 items-center justify-center">
@@ -134,23 +157,21 @@ const handleTradeClick = (row: MarketRow) => {
       </template>
 
       <template #cell-change="{ row }">
-        <span :class="(row as MarketRow).isPositive ? 'text-[#49D697]' : 'text-[#FF4D4D]'">
+        <span
+          :class="
+            (row as MarketRow).isPositive ? 'text-[#49D697]' : 'text-[#FF4D4D]'
+          "
+        >
           {{ (row as MarketRow).change }}
         </span>
       </template>
 
       <template #cell-chart="{ row }">
-        <img :src="(row as MarketRow).chart" alt="7 day trend" class="h-auto w-30.75" />
-      </template>
-
-      <template #cell-action="{ row }">
-        <button
-          type="button"
-          class="rounded-full border border-[#2BFFC3] bg-linear-to-t from-[#1a9975] to-[#2bffc3] px-4 py-1.5 text-xs font-semibold text-black"
-          @click="handleTradeClick(row as MarketRow)"
-        >
-          {{ (row as MarketRow).actionLabel }}
-        </button>
+        <img
+          :src="(row as MarketRow).chart"
+          alt="7 day trend"
+          class="h-auto w-30.75"
+        />
       </template>
     </ReusableTable>
   </section>
