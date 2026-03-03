@@ -142,6 +142,13 @@ const columns = [
             </div>
           </template>
 
+          <template #cell-time="{ row }">
+            <button
+              class="text-xs text-secondary border border-[#222222] px-3 py-1.5 rounded-full bg-[#0F0B08]"
+            >
+              {{ row.time }}
+            </button>
+          </template>
           <template #cell-action="{ row }">
             <button
               class="text-xs text-secondary border border-[#222222] px-3 py-1.5 rounded-full bg-[#0F0B08]"

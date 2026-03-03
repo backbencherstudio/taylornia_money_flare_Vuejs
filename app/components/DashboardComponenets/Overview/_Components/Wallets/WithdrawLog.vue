@@ -180,6 +180,10 @@ const getCellWrapperClass = (row: DepositRow, key: string) => {
             </div>
           </template>
 
+          <template #cell-empty>
+            
+          </template>
+
           <template #empty> No deposit log found. </template>
         </ReusableTable>
       </div>
