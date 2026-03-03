@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Income from "./Income.vue";
+import IncomeChart from "./IncomeChart.vue";
 import ReferralHeader from "./ReferralHeader.vue";
 import ReferralLog from "./ReferralLog.vue";
 import TotalEarningsChart from "./TotalEarningsChart.vue";
@@ -14,9 +14,13 @@ import TotalReferralsChart from "./TotalReferralsChart.vue";
       <TotalReferralsChart />
       <TotalEarningsChart />
     </div>
-    <div class="grid grid-col-1 xl:grid-cols-2 gap-6 mt-6">
-      <ReferralLog />
-      <Income />
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 mt-6">
+      <div class="xl:col-span-8">
+        <ReferralLog />
+      </div>
+      <div class="xl:col-span-4">
+        <IncomeChart />
+      </div>
     </div>
   </div>
 </template>
