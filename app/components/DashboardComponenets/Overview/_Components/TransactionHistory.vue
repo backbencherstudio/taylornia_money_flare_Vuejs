@@ -2,6 +2,7 @@
 import ReferralIcon from "~/components/Icons/ReferralIcon.vue";
 import ReferralIconRed from "~/components/Icons/ReferralIconRed.vue";
 import ThreeDot from "~/components/Icons/ThreeDot.vue";
+import TransactionIcon from "~/components/Icons/TransactionIcon.vue";
 import TrophyIcon from "~/components/Icons/TrophyIcon.vue";
 
 const transactions = [
@@ -81,7 +82,7 @@ const transactions = [
     >
       <div class="flex items-center gap-2">
         <button class="p-2.5 primary-border rounded-lg">
-          <TrophyIcon />
+          <TransactionIcon />
         </button>
         <p class="text-secondary font-dm tracking-[-0.75px]">Transaction History </p>
       </div>
