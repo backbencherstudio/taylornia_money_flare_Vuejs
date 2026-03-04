@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, type Component } from "vue";
 import PigIcon from "~/components/Icons/PigIcon.vue";
 import WithdrawIcon from "~/components/Icons/WithdrawIcon.vue";
+import BaseTabs from "~/components/Reusable/BaseTabs.vue";
 import DepositeAndActivity from "./DepositeAndActivity.vue";
 import WithdrawAndActivity from "./WithdrawAndActivity.vue";
 
 type TabType = "deposit" | "withdraw";
+
+interface WalletTab {
+  key: TabType;
+  label: string;
+  icon: Component;
+}
 
 const route = useRoute();
 const router = useRouter();
@@ -14,15 +21,22 @@ const activeTab = ref<TabType>(
   route.query.tab === "withdraw" ? "withdraw" : "deposit"
 );
 
-const setTab = (tab: TabType) => {
-  activeTab.value = tab;
+const tabs: WalletTab[] = [
+  { key: "deposit", label: "Invest Now", icon: PigIcon },
+  { key: "withdraw", label: "Withdraw", icon: WithdrawIcon },
+];
 
-  router.replace({
-    query: {
-      ...route.query,
-      tab,
-    },
-  });
+const setTab = (tab: any) => {
+  if (tab === "deposit" || tab === "withdraw") {
+    activeTab.value = tab;
+
+    router.replace({
+      query: {
+        ...route.query,
+        tab,
+      },
+    });
+  }
 };
 
 watch(
@@ -46,30 +60,11 @@ watch(
           Monday, 18 December 2024
         </p>
       </div>
-      <div class="flex items-center justify-between gap-3">
-        <button
-          @click="setTab('deposit')"
-          :class="[
-            'flex items-center gap-2 text-sm font-medium py-2 px-4 rounded-full leading-[150%] border transition',
-            activeTab === 'deposit'
-              ? 'bg-linear-to-t from-[#1a9975] to-[#2bffc3] border-[#2BFFC3] text-black'
-              : 'primary-border text-white',
-          ]"
-        >
-          <PigIcon /> Invest Now
-        </button>
-        <button
-          @click="setTab('withdraw')"
-          :class="[
-            'flex items-center gap-2 text-sm font-medium py-2 px-4 rounded-full leading-[150%] border transition',
-            activeTab === 'withdraw'
-              ? 'bg-linear-to-t from-[#1a9975] to-[#2bffc3] border-[#2BFFC3] text-black'
-              : 'primary-border text-white',
-          ]"
-        >
-          <WithdrawIcon /> Withdraw
-        </button>
-      </div>
+      <BaseTabs
+        :model-value="activeTab"
+        :tabs="tabs"
+        @update:model-value="setTab"
+      />
     </header>
 
     <div>

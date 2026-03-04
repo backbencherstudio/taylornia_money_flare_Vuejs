@@ -5,6 +5,7 @@ import SearchIcon from "~/components/Icons/SearchIcon.vue";
 import Wallet1 from "~/components/Icons/Wallet1.vue";
 import Wallet2 from "~/components/Icons/Wallet2.vue";
 import Wallet3 from "~/components/Icons/Wallet3.vue";
+import BasePagination from "~/components/Reusable/BasePagination.vue";
 import ReusableTable from "~/components/Reusable/ReusableTable.vue";
 
 type DepositStatus = "Passed" | "Pending";
@@ -22,6 +23,8 @@ interface DepositRow {
 }
 
 const searchTerm = ref("");
+const currentPage = ref(1);
+const pageSize = 4;
 
 const columns = [
   { label: "Date", key: "date" },
@@ -96,6 +99,21 @@ const filteredRows = computed(() => {
   );
 });
 
+const totalPages = computed(() => {
+  return Math.max(1, Math.ceil(filteredRows.value.length / pageSize));
+});
+
+const paginatedRows = computed(() => {
+  const start = (currentPage.value - 1) * pageSize;
+  return filteredRows.value.slice(start, start + pageSize);
+});
+
+watch([filteredRows, totalPages], () => {
+  if (currentPage.value > totalPages.value) {
+    currentPage.value = totalPages.value;
+  }
+});
+
 const getStatusClass = (status: DepositStatus) => {
   return status === "Passed"
     ? "border border-[#2BFFC3] text-[#49D697]"
@@ -139,7 +157,7 @@ const getCellWrapperClass = (row: DepositRow, key: string) => {
         <ReusableTable
           class="deposit-log-table rounded-[14px] border-[#222222]"
           :columns="columns"
-          :data="filteredRows"
+          :data="paginatedRows"
           row-key="id"
         >
           <template #cell-payment="{ row }">
@@ -182,6 +200,7 @@ const getCellWrapperClass = (row: DepositRow, key: string) => {
 
           <template #empty> No deposit log found. </template>
         </ReusableTable>
+        <BasePagination v-model="currentPage" :total-pages="totalPages" class="mt-4" />
       </div>
     </div>
     <div
