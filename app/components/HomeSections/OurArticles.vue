@@ -2,6 +2,7 @@
 import SectionHeading from "../Reusable/SectionHeading.vue";
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/carousel.css";
+import BaseButtonLink from "../Reusable/BaseButtonLink.vue";
 
 const router = useRouter();
 
@@ -51,7 +52,7 @@ const articles = [
   },
 ];
 
-const carouselBreakpoints:any = {
+const carouselBreakpoints: any = {
   0: {
     itemsToShow: 1,
     snapAlign: "start",
@@ -118,6 +119,11 @@ const carouselBreakpoints:any = {
         </Slide>
       </Carousel>
     </section>
+    <div class="flex justify-center mt-6">
+      <BaseButtonLink href="/our-articles" class="">
+        More Articles
+      </BaseButtonLink>
+    </div>
   </div>
 </template>
 
