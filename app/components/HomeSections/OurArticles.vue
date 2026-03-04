@@ -3,6 +3,8 @@ import SectionHeading from "../Reusable/SectionHeading.vue";
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/carousel.css";
 
+const router = useRouter();
+
 const articles = [
   {
     id: 1,
@@ -85,6 +87,7 @@ const carouselBreakpoints:any = {
         <Slide v-for="(article, index) in articles" :key="article.id">
           <article class="article-card h-full text-left">
             <div
+              v-on:click="router.push(`/our-articles/${article.id}`)"
               :class="`image-wrapper bg-cover bg-center border border-[#7D7D7D] h-96 ${index % 2 !== 0 ? 'lg:h-64.75' : ''}`"
               :style="{ backgroundImage: `url(${article.image})` }"
             ></div>

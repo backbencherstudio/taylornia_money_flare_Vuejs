@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BaseButtonLink from '~/components/Reusable/BaseButtonLink.vue';
-
+  const router = useRouter();
 definePageMeta({
   layout: "client",
 });
@@ -62,8 +62,8 @@ const articles = [
         </h1>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div v-for="(article, index) in articles" :key="article.id">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
+        <div  v-for="(article, index) in articles" :key="article.id" @click="router.push(`/our-articles/${article.id}`)" class="cursor-pointer">
           <article class="article-card h-full text-left">
             <div
               :class="`image-wrapper bg-cover bg-center border border-[#7D7D7D] h-96`"
