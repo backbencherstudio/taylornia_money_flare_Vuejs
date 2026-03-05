@@ -25,7 +25,7 @@ definePageMeta({
         </h1>
       </div>
 
-      <div class="max-w-7xl mx-auto relative z-10 mt-20">
+      <div class="max-w-7xl mx-auto relative z-10 mt-20 px-6 lg:px-10">
         <div>
           <div class="image-wrapper">
             <img
