@@ -3,9 +3,26 @@ import ReferralIcon from "~/components/Icons/ReferralIcon.vue";
 import ReferralIconRed from "~/components/Icons/ReferralIconRed.vue";
 import ThreeDot from "~/components/Icons/ThreeDot.vue";
 import TransactionIcon from "~/components/Icons/TransactionIcon.vue";
-import TrophyIcon from "~/components/Icons/TrophyIcon.vue";
+import BaseSelect from "~/components/Reusable/BaseSelect.vue";
+import type { SelectOption } from "~/types/select";
 
-const transactions = [
+type TransactionDirection = "in" | "out";
+type TransactionType = "swap" | "send" | "receive";
+type TransactionFilterValue = "all" | "in" | "out" | "swap";
+
+interface TransactionRow {
+  id: number;
+  type: TransactionType;
+  asset: string;
+  amount: number;
+  symbol: "+" | "-";
+  pair: string;
+  direction: TransactionDirection;
+  date: string;
+  txHash: string;
+}
+
+const transactions: TransactionRow[] = [
   {
     id: 1,
     type: "swap",
@@ -73,6 +90,36 @@ const transactions = [
     txHash: "0x92ab...e719"
   }
 ];
+
+const filterOptions: SelectOption<TransactionFilterValue>[] = [
+  { label: "All", value: "all" },
+  { label: "Incoming", value: "in" },
+  { label: "Outgoing", value: "out" },
+  { label: "Swap", value: "swap" },
+];
+
+const selectedFilter = ref<TransactionFilterValue>("all");
+
+const selectedFilterLabel = computed(() => {
+  return (
+    filterOptions.find((option) => option.value === selectedFilter.value)?.label ??
+    "All"
+  );
+});
+
+const filteredTransactions = computed(() => {
+  if (selectedFilter.value === "all") {
+    return transactions;
+  }
+
+  if (selectedFilter.value === "swap") {
+    return transactions.filter((transaction) => transaction.type === "swap");
+  }
+
+  return transactions.filter(
+    (transaction) => transaction.direction === selectedFilter.value,
+  );
+});
 </script>
 
 <template>
@@ -87,9 +134,21 @@ const transactions = [
         <p class="text-secondary font-dm tracking-[-0.75px]">Transaction History </p>
       </div>
       <div class="flex items-center gap-3">
-        <button class="primary-border px-4 py-2 rounded-full hover:bg-[#111111] duration-300">
-            All
-        </button>
+        <BaseSelect
+          v-model="selectedFilter"
+          :options="filterOptions"
+          aria-label="Transaction filter"
+          menu-align="right"
+          size="sm"
+          button-class="!h-10 !rounded-full !border-[#222222] !bg-transparent !px-4 !text-sm !text-white/85 hover:!bg-[#111111]"
+          menu-class="!rounded-xl !border-[#222222] !bg-[#0B0B0B]"
+          option-class="!rounded-lg"
+          selected-option-class="!bg-white/10 !text-white"
+        >
+          <template #trigger>
+            <span class="block truncate">{{ selectedFilterLabel }}</span>
+          </template>
+        </BaseSelect>
         <button
           type="button"
           class="flex h-10 w-10 flex-col items-center justify-center gap-0.75 rounded-full primary-border text-[#7B7B7B] hover:bg-[#111111] duration-300"
@@ -99,7 +158,17 @@ const transactions = [
       </div>
     </header>
     <div class="mt-5 space-y-3">
-        <div v-for="transaction in transactions" :key="transaction.id" class="primary-border p-3 flex justify-between items-center rounded-lg ">
+        <div
+          v-if="!filteredTransactions.length"
+          class="primary-border rounded-lg p-3 text-sm text-secondary"
+        >
+          No transaction found for this filter.
+        </div>
+        <div
+          v-for="transaction in filteredTransactions"
+          :key="transaction.id"
+          class="primary-border p-3 flex justify-between items-center rounded-lg "
+        >
             <div class="flex gap-2  ">
                 <component :is="transaction.direction === 'in' ? ReferralIcon : ReferralIconRed" />
                 <div>
